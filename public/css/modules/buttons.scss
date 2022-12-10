@@ -1,0 +1,200 @@
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    position: relative;
+    transition: .2s ease background-color, .2s ease box-shadow;
+
+    color: #fff;
+    background: rgb(255 255 255 / 10%);
+    box-shadow: rgb(255 255 255 / 20%) 0 0 0 1px;
+
+    &:hover{
+        background: rgb(255 255 255 / 15%);
+        // box-shadow: rgb(255 255 255 / 20%) 0 0 0 2px;
+    }
+
+    &.btn-sm{
+        padding: 4px 8px;
+    }
+    &.text-success{
+        color: #76ff33;
+    }
+    &.text-danger{
+        color: #ff7979;
+    }
+
+    &[disabled]{
+        background: rgb(255 255 255 / 10%) !important;
+        cursor: default;
+        opacity: .65;
+    }
+
+    &.green{
+        background-color: rgba(118, 255, 51, 0.25);
+        box-shadow: rgb(118 255 51 / 50%) 0 0 0 1px;
+        color: #76ff33;
+
+        &:hover{
+            box-shadow: #76ff33 0 0 0 2px;
+        }
+        &.installed{
+            background: transparent;
+            box-shadow: rgb(118 255 51 / 50%) 0 0 0 1px !important;
+            cursor: default;
+        }
+        &[disabled]{
+            background-color: rgba(118, 255, 51, 0.25) !important;
+            box-shadow: rgb(118 255 51 / 50%) 0 0 0 1px !important;
+        }
+    }
+    &.warning, &.gold{
+        background-color: rgba(255, 204, 0, 0.25);
+        box-shadow: rgb(255 204 0 / 50%) 0 0 0 1px;
+        color: #ffcc00;
+
+        &:hover{
+            box-shadow: rgb(255 204 0 / 50%) 0 0 0 2px;
+        }
+        &[disabled]{
+            background-color: rgba(255, 204, 0, 0.25) !important;
+            box-shadow: rgb(255 204 0 / 50%) 0 0 0 1px !important;
+        }
+    }
+
+    
+
+    &.primary{
+        background-color: rgba(0, 212, 255, 0.25);
+        box-shadow: rgb(0 212 255 / 50%) 0 0 0 1px;
+        color: #00d7ff;
+
+        &:hover{
+            box-shadow: #00d7ff 0 0 0 2px;
+        }
+
+        &[disabled]{
+            background-color: rgb(0 212 255 / 25%) !important;
+            box-shadow: rgb(0 212 255 / 50%) 0 0 0 1px !important;
+
+            &::after{
+                content: 'MAX';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: #00d7ff;
+                text-shadow: #00d7ff 0px 0px 0.375em;
+            }
+            &::before{
+                display: none;
+            }
+        }
+
+    }
+    &.red{
+        background-color: rgb(255 15 0 / 35%);
+        box-shadow: rgb(255 15 0 / 50%) 0 0 0 1px;
+        color: rgb(255 119 110);
+
+        &:hover{
+            box-shadow: #ff0f00 0 0 0 2px;
+        }
+
+        &[disabled]{
+            background-color: rgb(255 119 110 / 10%) !important;
+            box-shadow: rgb(255 15 0 / 50%) 0 0 0 1px !important;
+        }
+
+    }
+    &.garage-button{
+        width: 100%;
+        height: 50px;
+        padding: 0;
+        justify-content: start;
+
+        div{
+            flex-direction: column;
+            text-align: left;
+            display: inline-flex;
+        }
+
+        &:before {
+            content: '';
+            width: 45px;
+            height: 45px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        &.btn-install{
+            &:before {
+                background-image: url("../assets/img/install.svg");
+            }
+        }
+        &.btn-install.warning{
+            &:before {
+                background-image: url("../img/shop.svg");
+            }
+        }
+        &.btn-upgrade{
+            &:before {
+                background-image: url("../assets/img/upgrade.svg");
+            }
+        }
+        &.btn.red{
+            &::before{
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23ff776e' d='M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z'%3E%3C/path%3E%3C/svg%3E");
+                background-size: 30px;
+                background-position: center;
+            }
+        }
+    }
+}
+input[switch]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+
+    &:checked+.switch-label {
+        background: #3f78e6;
+    }
+    &:checked+.switch-label:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+    }
+}
+
+
+.switch-label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 45px;
+    height: 22px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 5px;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border-radius: 90px;
+        transition: 0.2s ease transform, .2s ease left, .2s ease width;
+        box-shadow: 0px 0px 2px 2px #0000001a;
+    }
+
+    &:active:after {
+        width: 20px;
+    }
+}

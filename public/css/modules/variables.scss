@@ -1,0 +1,15 @@
+
+
+$header-height: 67px;
+$chat-width: 421px;
+$sss: red;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+:root{
+    --color: #bfd5ff;
+    --bgc: #1B313D;
+    --bgc1: #012f42;
+}

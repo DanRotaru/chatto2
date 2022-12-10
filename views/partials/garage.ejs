@@ -1,0 +1,386 @@
+<div class="garage">
+    <!-- <div id="viewer"></div> -->
+    <div class="garage-intro">
+
+        <%- include('../partials/garage-viewer1') %> 
+<!-- <iframe src="/garage-viewer" id="mygarage"></iframe> -->
+        <!--  -->
+
+        <!-- <svg class="no-viewer">
+            <use xlink:href="#error-svg"></use>
+        </svg> -->
+        <div class="left-side">
+            <div class="gear-score">
+                <!-- <div class="top">
+                    <svg>
+                        <use xlink:href="#gear-svg"></use>
+                    </svg>
+                    <span>Gear score</span>
+                </div> -->
+                <div class="top">
+                    <svg>
+                        <use xlink:href="#gear-svg"></use>
+                    </svg>
+                    <span>Gear score / Crystalls</span>
+                </div>
+                <div class="score">
+                    <div><%= info.earning.score %>/<%= info.earning.cry %></div>
+                    <div></div>
+                </div>
+                <!-- <div class="item-name">
+                    <div>Аккаунт</div>
+                    <div>+ <%= info.earning.system_kry %> <kry></kry> + <%= info.earning.system_score %> опыта</div>
+                </div> -->
+                <div class="item-name">
+                    <div>Пушки</div>
+                    <div>+ <%= info.earning.turrets %> <kry></kry></div>
+                </div>
+                <div class="item-name">
+                    <div>Корпуса</div>
+                    <div>+ <%= info.earning.hulls %> <kry></kry></div>
+                </div>
+                <div class="item-name">
+                    <div>Дроны</div>
+                    <div>+ <%= info.earning.drones %> опыта</div>
+                </div>
+                <div class="item-name">
+                    <div>Краски</div>
+                    <div>+ <%= info.earning.paints %> ккойна</div>
+                </div>
+                <div class="garage-info">
+                    <svg>
+                        <use xlink:href="#info-svg"></use>
+                    </svg>
+                    Gear Score / Crystalls отражает количество
+                    получаемого опыта и кристаллов за одно сообщение.
+                </div>
+            </div>
+
+            <!-- <div class="bottom-btns">
+                <div class="btn">
+                    <svg viewBox="0 0 24 24">
+                        <path fill="#fff" d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z">
+                        </path>
+                    </svg>
+                </div>
+            </div> -->
+            
+        </div>
+        <div class="right-side">
+            <div class="garage-intro__items">
+                <button class="garage-intro__items-item" data-item="paints">
+                    <div class="title">Краски</div>
+                    <img src="<%= installed.paint %>">
+                </button>
+                <button class="garage-intro__items-item" data-item="containers">
+                    <div class="title">Контейнеры</div>
+                    <svg>
+                        <use xlink:href="#container-svg"></use>
+                    </svg>
+                </button>
+            </div>
+            <button class="bigitem" data-item="turrets">
+                <div class="title">Пушки</div>
+                <img src="<%= installed.turret %>">
+            </button>
+            <button class="bigitem" data-item="hulls">
+                <div class="title">Корпуса</div>
+                <img src="<%= installed.hull %>">
+            </button>
+        </div>
+    </div>
+
+    <div class="garage-main">
+        <svg class="garage-back" onclick="page('main')">
+            <use xlink:href="#back-svg"></use>
+        </svg>
+
+        <nav class="nav garage__nav">
+            <a class="nav__item active" data-id="turrets">Пушки</a>
+            <a class="nav__item" data-id="hulls">Корпуса</a>
+            <a class="nav__item" data-id="paints">Краски</a>
+            <a class="nav__item" data-id="supply">Припасы</a>
+            <a class="nav__item" data-id="containers">Контейнеры</a>
+            <a class="nav__item" data-id="special">Особое</a>
+            <a class="nav__item" data-id="gifts">Подарки</a>
+        </nav>
+        
+        <div class="garage-top">
+            <div class="garage__viewer" data-garage="viewer">
+                <%- include('../partials/garage-viewer2') %> 
+                <!-- <iframe src="/garage-viewer" id="mygarage"></iframe> -->
+            </div>
+            <div class="garage__information" data-garage="information">
+                <div class="garage__title">Информация</div>
+                <div class="info">
+                    <div class="info__title">
+                        <div class="info__title-title">Предмет</div>
+                        <div class="gs">
+                            <svg>
+                                <use xlink:href="#gear-svg"></use>
+                            </svg>
+                            <div>+<span id="gs-plus">0</span> <kry></kry></div>
+                        </div>
+                    </div>
+                    <div class="info__description"></div>
+                    <div class="bottom-btn">
+
+                        <div id="skins-btn">
+                            <!-- <div class="bottom-btn-name">Устройства/Скины</div> -->
+                            <div class="bottom-btn-name">Скины</div>
+                            <div class="flex">
+                                <!-- <div class="skin-btn">
+                                    <svg>
+                                        <use xlink:href="#nodevice-svg"></use>
+                                    </svg>
+                                </div> -->
+                                <div class="skin-btn skins-wrapper" onclick="garage.skinBtn1()">
+                                    <div class="skin-btn bts installed" data-def-skin="1">
+                                        <img src="../assets/img/skins/default-skin.svg">
+                                    </div>
+                                    <div class="skin-btn bts hidden" data-skin="4">
+                                        <img src="../assets/img/skins/xt.webp">
+                                    </div>
+                                    <div class="skin-btn bts hidden" data-skin="5">
+                                        <img src="../assets/img/skins/lc.webp">
+                                    </div>
+                                    <div class="skin-btn bts hidden" data-skin="6">
+                                        <img src="../assets/img/skins/pr.webp">
+                                    </div>
+                                    <div class="skin-btn bts hidden" data-skin="7">
+                                        <img src="../assets/img/skins/dc.webp">
+                                    </div>
+                                    <div class="skin-btn bts hidden" data-skin="8">
+                                        <img src="../assets/img/skins/dc.webp">
+                                    </div>
+                                    <div class="skin-btn bts hidden" data-skin="10">
+                                        <img src="../assets/img/skins/ut.webp">
+                                    </div>
+                                    
+                                    <div class="skin-btn bts" disabled data-skin-h="0"></div>
+                                    <div class="skin-btn bts" disabled data-skin-h="1"></div>
+                                    <div class="skin-btn bts" disabled data-skin-h="2"></div>
+                                    <div class="skin-btn bts" disabled data-skin-h="3"></div>
+                                    <div class="skin-btn bts" disabled data-skin-h="4"></div>
+                                    <div class="skin-btn bts" disabled data-skin-h="5"></div>
+                                    <div class="skin-btn bts" disabled data-skin-h="6"></div>
+                                    <div class="skin-btn bts hidden" disabled data-skin-h="7"></div>
+                                    <div class="skin-btn bts hidden" disabled data-skin-h="8"></div>
+                                    <div class="skin-btn bts hidden" disabled data-skin-h="9"></div>
+                                    <div class="skin-btn bts hidden" disabled data-skin-h="10"></div>
+                                    <button class="btn" onclick="garage.skinBtn()">
+                                        <svg>
+                                            <use xlink:href="#back-svg"></use>
+                                        </svg>
+                                        Назад
+                                    </button>
+
+                                    <svg>
+                                        <use xlink:href="#default-skin-svg"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <button class="btn garage-button btn-install green">Установить</button>
+                            <button class="btn garage-button btn-upgrade primary">
+                                <div>
+                                    <span>Улучшить</span>
+                                    <span id="upgrade-text">35 000 <kry></kry></span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="garage__information" data-garage="information1">
+                <div class="info info1">
+                    <div class="info__title">Контейнер 1</div>
+                    <div class="info__description">Старые контейнеры которые в которых есть только кристаллы и опыт. Каждый контейнер имеет рандомное количество кристаллов и опыта.                    </div>
+                </div>
+                <div class="info info2">
+                    <div class="info__title">Возможные награды</div>
+                    <div class="possible-items sm-scroll two">
+                        <div class="item">
+                            <div class="item__count">От 10 до 10 000 кристаллов</div>
+                            <img src="../img/shop/crys2.webp">
+                        </div>
+                        <div class="item">
+                            <div class="item__count">От 10 до 500 опыта</div>
+                            <img src="../assets/img/score_big.webp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="garage__information" data-garage="information2">
+                <div class="case-container">
+                    <div class="opencase">
+                        <div class="rays"></div>
+                        <div class="rays rays1"></div>
+                        <div class="prize">
+                            <img src="http://localhost:3000/img/shop/crys2.webp" alt="i">
+                            <div>278 опыта</div>
+                        </div>
+                        <img class="caseImg" src="assets/img/keys_x2.webp">
+                    </div>
+                    <div class="btns">
+                        <button class="btn green" data-c-btn="open" onclick="garage.openCase(1)">Открыть</button>
+                        <button class="btn warning" data-c-btn="openx5">x5</button>
+                        <button class="btn warning" data-c-btn="openx15">x15</button>
+                    </div>
+                </div>
+
+                <div class="case-buy">
+                    <div class="case-buy__title">Приобрести</div>
+                    <div class="case-buy__head">
+                        <button class="btn primary" data-btn="decrease">-</button>
+                        <input type="number" id="case-buy-num" value="1" min="1" max="1000">
+                        <button class="btn primary" data-btn="increase">+</button>
+                    </div>
+                    <button class="btn primary" data-c-btn="buy" onclick="garage.caseBuy()">
+                        Купить 1
+                        <span>5 000 <kry></kry></span>
+                    </button>
+                    <button class="btn warning" onclick="pShop('case')">
+                        <svg>
+                            <use xlink:href="#shop-new-svg"></use>
+                        </svg>
+                        Перейти в магазин
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="garage__items" id="garage_turrets"></div>
+        <div class="garage__items" id="garage_hulls"></div>
+        <div class="garage__items" id="garage_paints"></div>
+        <div class="garage__items" id="garage_supply"></div>
+        <div class="garage__items full" id="garage_containers"></div>
+        <div class="garage__items" id="garage_special"></div>
+        <div class="garage__items" id="garage_gifts"></div>
+    </div>
+
+
+    <div class="garage-page hidden">
+        <div class="garage-page__back">Назад</div>
+        <div class="garage-page__main hidden">
+            <div class="garage-page__main-page hidden" id="page-quests">
+                <%- include('./quests.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-shop">
+                <%- include('./shop.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-lottery">
+                <%- include('./lottery.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-settings">
+                <%- include('./settings.ejs') %>
+            </div>
+
+            <div class="garage-page__main-page hidden" id="page-rules">
+                <%- include('./rules.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-clans">
+                <%- include('./clans.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-ratings">
+                <%- include('./ratings.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-updates">
+                <%- include('./updates.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-online">
+                <%- include('./online.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-administration">
+                <%- include('./administration.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-cards">
+                <%- include('./cards.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-help">
+                <%- include('./help.ejs') %>
+            </div>
+            <div class="garage-page__main-page hidden" id="page-profile">
+                <%- include('./profile.ejs') %>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<style>
+    .garage-intro .bigitem, .garage-intro__items-item{
+        background: rgb(0 0 0 / 70%);
+    }
+</style>
+<%# 
+radial-gradient(50% 150% at 50% 100%, #395673 0%, #001926 100%)
+
+
+viewer
+
+<iframe src="http://garage.loc/assets/garage/html5/?123532" id="iframe" style="
+    overflow: hidden;
+    border: none;
+    position: absolute;
+    left: 0;
+    width: calc(100% + 39px);
+    height: calc(100% - 0px);
+    margin-left: -19px;
+    background: transparent;
+    z-index: -1;
+"></iframe>
+%> 
+<div class="modal-overlay"></div>
+<div class="modal">
+    <div class="modal-title">
+        <span>ПОДТВЕРЖДЕНИЕ</span>
+        <div class="close" onclick="alertify_close()"></div>
+    </div>
+
+    <div class="modal-text">
+        Вы действительно хотите купить Рельса м2?
+    </div>
+    <div class="modal-footer">
+        <button class="btn">Нет</button>
+        <button class="btn green">Да</button>
+    </div>
+</div>
+<div id="usermenu">
+    <div class="header">
+        <i class="rank r18"></i>
+        <div></div>
+    </div>
+    <div class="menu">
+        <div class="menu-svg">
+        <div tooltip="Профиль пользователя" flow="down">
+            <svg>
+                <use xlink:href="#user-svg"></use>
+            </svg>
+        </div>
+        <div tooltip="Скопировать ник" flow="down">
+            <svg>
+                <use xlink:href="#copy-svg"></use>
+            </svg>
+        </div>
+        <!-- <div tooltip="Профиль клана" flow="down">
+            <svg>
+                <use xlink:href="#group-svg"></use>
+            </svg>
+        </div> -->
+        <div tooltip="Игнорировать" flow="down">
+            <svg>
+                <use xlink:href="#user-minus-svg"></use>
+            </svg>
+        </div>
+    </div><div class="items-list">
+        <div class="item">Написать в общем</div>
+        <div class="item">Написать лично</div>
+    </div>
+    </div>
+</div>

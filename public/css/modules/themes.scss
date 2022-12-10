@@ -1,0 +1,38 @@
+body.green{
+    background-image: radial-gradient(50% 100% at 50% 100%, #3f7339 0%, #002613 100%);
+    --bgc: #1b3d29;
+    --bgc1: #173423;
+
+    [tooltip]{
+        --bg: #295227;
+    }
+
+    --color: #eefff6;
+}
+body.teal{
+    background-image: radial-gradient(50% 100% at 50% 100%, #397360 0%, #033837 100%);
+    --bgc: #033837;
+    --bgc1: #032f2d;
+
+    [tooltip]{
+        --bg: #044443;
+    }
+}
+body.darkblue{
+    background-image: radial-gradient(50% 100% at 50% 100%, #17212B 0%, #152131 100%);
+    --bgc: #152131;
+    --bgc1: #131d2b;
+
+    [tooltip]{
+        --bg: #1a2a3d;
+    }
+}
+body.dark{
+    background-image: radial-gradient(50% 100% at 50% 100%, #1a1a1a 0%, #000000 100%);
+    --bgc: #000000;
+    --bgc1: #1a1a1a;
+
+    [tooltip]{
+        --bg: #1a1a1a;
+    }
+}

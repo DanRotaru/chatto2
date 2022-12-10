@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <%- include('../partials/head'); %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css?<%= fstime.css %>">
+    <script src="js/vendor.js"></script>
+    <script src="../assets/garage/vendor.js"></script>
+    <script src="../assets/garage/viewer.min.js"></script>
+</head>
+<body>
+    <%- include('../partials/header') %> 
+
+    <aside class="chat">
+        <%- include('../partials/chat') %>
+    </aside>
+
+    <main>
+        <%- include('../partials/garage') %>
+    </main>
+
+    <!-- <div class="modal-overlay"></div>
+    <div class="modal">
+        <div class="modal__title">Сбой</div>
+        <div class="modal__message">NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.</div>
+        <div class="modal__close"></div>
+    </div> -->
+
+    <%- include('../partials/svg-sprites.ejs') %>
+
+    <script>
+        const ME = {
+            login: '<%= info.login %>',
+            kry: Number('<%= info.kry %>'),
+            coin: Number('<%= info.coin %>'),
+            id: '<%= info.id %>',
+            group: Number('<%= info.group %>'),
+            hasTasks: Boolean('<%= info.hasTasks %>'),
+            settings: JSON.parse(`<%- JSON.stringify(info.settings) %>`),
+            rank: {
+                id: '<%= rank.id %>',
+                score: '<%= rank.score %>',
+                name: '<%= rank.score %>',
+                next: '<%= rank.next %>',
+                prev: '<%= rank.prev %>',
+                progress: '<%= rank.progress %>'
+            },
+        }
+    </script>
+    <script src="js/index.js?<%= fstime.js %>"></script>
+    <script>
+        $("header .navbar .user-details .progress div").width(ME.rank.progress + "%");
+    </script>
+</body>
+</html>

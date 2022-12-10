@@ -1,0 +1,52 @@
+<%
+let error_title = '';
+
+if(error == 403) error_title = 'Forbidden';
+else if(error == 404) error_title = 'Not found';
+else if(error == 401) error_title = 'Unauthorized';
+else if(error == 500) error_title = 'Server error';
+else error_title = 'Error ' + error;
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= 'Error '+ error + ' – '+error_title %></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nunito&display=swap');
+        body{
+            background: #1A202C;
+            color: #a0aec0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font: 20px "Nunito", sans-serif;
+            white-space: nowrap;
+            height: 100vh;
+            overflow: hidden;
+            /* text-transform: uppercase; */
+        }
+        div {
+            padding: 0 15px;
+        }
+        div:last-child{
+            position: relative;
+            padding-left: 12px;
+        }
+        div:last-child:before {
+            content: '';
+            width: 1px;
+            height: 25px;
+            position: absolute;
+            background: #cbd5e0;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div><%= error %></div>
+    <div><%= error_title %></div>
+</body>
+</html>

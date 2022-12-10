@@ -1,0 +1,118 @@
+<% 
+function number_format(e, n, t, i) {
+    e = (e + "").replace(/[^0-9+\-Ee.]/g, "");
+    var r, a, o, d = isFinite(+e) ? +e : 0,
+        h = isFinite(+n) ? Math.abs(n) : 0,
+        l = void 0 === i ? " " : i,
+        g = void 0 === t ? " " : t,
+        u = "";
+    return 3 < (u = (h ? (r = d, a = h, o = Math.pow(10, a), "" + (Math.round(r * o) / o).toFixed(a)) : "" + Math.round(d)).split("."))[0].length && (u[0] = u[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, l)), (u[1] || "").length < h && (u[1] = u[1] || "", u[1] += new Array(h - u[1].length + 1).join("0")), u.join(g)
+}
+%> 
+<header>
+    <div class="navbar">
+        <div class="navbar__item">
+            <button class="navbar__btn btn-premium">
+                <svg>
+                    <use xlink:href="#premium-svg"></use>
+                </svg>
+            </button>
+            <div class="user-details">
+                <div class="rank rm<%= rank._id %>"></div>
+                <div class="user-details__name">
+                    <div><span id="rank_name"><%= rank.name %></span> | <span class="name"><%= info.login %></span></div>
+                    <div class="progress">
+                        <div></div>
+                    </div>
+                    <div id="rank_text"><%= rank.score %> / <%= rank.next %></div>
+                </div>
+            </div>
+            <button onclick="menu()" class="navbar__btn bl-1" tooltip="Меню" flow="right">
+                <svg class="svg2">
+                    <use xlink:href="#menu2-svg"></use>
+                </svg>
+                <!-- <img style="height: 60px;" src="img/menu2.svg" alt="img"> -->
+            </button>
+            <button action="shop" class="navbar__btn" tooltip="Магазин" flow="right">
+                <svg class="nofill svg1">
+                    <use xlink:href="#shop-svg"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="navbar__item">
+            <svg class="svg1">
+                <use xlink:href="#logo_t-svg"></use>
+            </svg>
+        </div>
+        <div class="navbar__item">
+            <div class="item-number">
+                <div class="item-number__num">
+                    <div class="num">
+                        <svg>
+                            <use xlink:href="#coin-svg"></use>
+                        </svg>
+                        <div id="my-coin"><%= number_format(info.coin) %></div>
+                    </div>
+                    <svg class="coin-plus">
+                        <use xlink:href="#plus-svg"></use>
+                    </svg>
+                </div>
+                <div class="item-number__num">
+                    <div class="num">
+                        <svg>
+                            <use xlink:href="#kry-svg"></use>
+                        </svg>
+                        <div id="my-kry"><%= number_format(info.kry) %></div>
+                    </div>
+                    <svg>
+                        <use xlink:href="#plus-svg"></use>
+                    </svg>
+                </div>
+            </div>
+            <button action="quests" class="navbar__btn bl-1" tooltip="Задания" flow="down">
+                <svg class="nofill svg1">
+                    <use xlink:href="#quests-svg"></use>
+                </svg>
+            </button>
+            <button action="lottery" class="navbar__btn" tooltip="Лотерея" flow="down">
+                <svg>
+                    <use xlink:href="#lottery-svg"></use>
+                </svg>
+            </button>
+            <button action="settings" class="navbar__btn" tooltip="Настройки" flow="down">
+                <svg>
+                    <use xlink:href="#settings-svg"></use>
+                </svg>
+            </button>
+            <button action="fullscreen" class="navbar__btn" tooltip="Полноэкранный режим" flow="down">
+                <div class="letter">F11</div>
+                <svg>
+                    <use xlink:href="#fullscreen-svg"></use>
+                </svg>
+            </button>
+            <!-- <button class="navbar__btn" tooltip="Помощь" flow="down">
+              <img src="data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M10,19H13V22H10V19M12,2C17.35,2.22 19.68,7.62 16.5,11.67C15.67,12.67 14.33,13.33 13.67,14.17C13,15 13,16 13,17H10C10,15.33 10,13.92 10.67,12.92C11.33,11.92 12.67,11.33 13.5,10.67C15.92,8.43 15.32,5.26 12,5A3,3 0 0,0 9,8H6A6,6 0 0,1 12,2Z'%3E%3C/path%3E%3C/svg%3E"/>
+          </button> -->
+            <button action="logout" class="navbar__btn br-0" tooltip="Выход" flow="down">
+                <svg>
+                    <use xlink:href="#logout-svg"></use>
+                </svg>
+            </button>
+            <button action="home" class="navbar__btn br-0 hidden" tooltip="Вернуться" flow="down">
+                <svg>
+                    <use xlink:href="#home-svg"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <nav class="nav" id="menu">
+        <a class="nav__item" data-nav="rules">Правила</a>
+        <a class="nav__item" data-nav="clans">Кланы</a>
+        <a class="nav__item" data-nav="ratings">Рейтинги</a>
+        <a class="nav__item" data-nav="updates">Обновления</a>
+        <a class="nav__item" data-nav="online">Онлайн</a>
+        <a class="nav__item" data-nav="administration">Администрация</a>
+        <a class="nav__item" data-nav="cards">Подарочные карты</a>
+        <a class="nav__item" data-nav="help">Помощь</a>
+    </nav>
+</header>

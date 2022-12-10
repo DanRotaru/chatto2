@@ -1,0 +1,125 @@
+.rank { background: url('../assets/ranks.webp') no-repeat top left; width: 32px; height: 32px;  } 
+.rank.r1 { background-position: 0 0; } 
+.rank.r1m { background-position: -32px 0; width: 128px; height: 128px; } 
+.rank.r2 { background-position: -160px 0; } 
+.rank.r2m { background-position: -192px 0; width: 128px; height: 128px; } 
+.rank.r3 { background-position: -320px 0; } 
+.rank.r3m { background-position: -352px 0; width: 128px; height: 128px; } 
+.rank.r4 { background-position: -480px 0; } 
+.rank.r4m { background-position: -512px 0; width: 128px; height: 128px; } 
+.rank.r5 { background-position: -640px 0; } 
+.rank.r5m { background-position: -672px 0; width: 128px; height: 128px; } 
+.rank.r6 { background-position: -800px 0; } 
+.rank.r6m { background-position: -832px 0; width: 128px; height: 128px; } 
+.rank.r7 { background-position: -960px 0; } 
+.rank.r7m { background-position: -992px 0; width: 128px; height: 128px; } 
+.rank.r8 { background-position: -1120px 0; } 
+.rank.r8m { background-position: -1152px 0; width: 128px; height: 128px; } 
+.rank.r9m { background-position: -1280px 0; width: 128px; height: 128px; } 
+.rank.r10 { background-position: -1408px 0; } 
+.rank.r9 { background-position: -1440px 0; } 
+.rank.r10m { background-position: -1472px 0; width: 128px; height: 128px; } 
+.rank.r11 { background-position: -1600px 0; } 
+.rank.r11m { background-position: -1632px 0; width: 128px; height: 128px; } 
+.rank.r12 { background-position: -1760px 0; } 
+.rank.r12m { background-position: -1792px 0; width: 128px; height: 128px; } 
+.rank.r13 { background-position: -1920px 0; } 
+.rank.r13m { background-position: -1952px 0; width: 128px; height: 128px; } 
+.rank.r14 { background-position: -2080px 0; } 
+.rank.r14m { background-position: -2112px 0; width: 128px; height: 128px; } 
+.rank.r15 { background-position: -2240px 0; } 
+.rank.r15m { background-position: -2272px 0; width: 128px; height: 128px; } 
+.rank.r16 { background-position: -2400px 0; } 
+.rank.r16m { background-position: -2432px 0; width: 128px; height: 128px; } 
+.rank.r17 { background-position: -2560px 0; } 
+.rank.r17m { background-position: -2592px 0; width: 128px; height: 128px; } 
+.rank.r18 { background-position: -2720px 0; } 
+.rank.r18m { background-position: -2752px 0; width: 128px; height: 128px; } 
+.rank.r19 { background-position: -2880px 0; } 
+.rank.r19m { background-position: -2912px 0; width: 128px; height: 128px; } 
+.rank.r20 { background-position: -3040px 0; } 
+.rank.r20m { background-position: -3072px 0; width: 128px; height: 128px; } 
+.rank.r21 { background-position: -3200px 0; } 
+.rank.r21m { background-position: -3232px 0; width: 128px; height: 128px; } 
+.rank.r22 { background-position: -3360px 0; } 
+.rank.r22m { background-position: -3392px 0; width: 128px; height: 128px; } 
+.rank.r23 { background-position: -3520px 0; } 
+.rank.r24 { background-position: -3552px 0; } 
+.rank.r23m { background-position: -3584px 0; width: 128px; height: 128px; } 
+.rank.r24m { background-position: -3712px 0; width: 128px; height: 128px; } 
+.rank.r25 { background-position: -3840px 0; } 
+.rank.r25m { background-position: -3872px 0; width: 128px; height: 128px; } 
+.rank.r26 { background-position: -4000px 0; } 
+.rank.r26m { background-position: -4032px 0; width: 128px; height: 128px; } 
+.rank.r27 { background-position: -4160px 0; } 
+.rank.r27m { background-position: -4192px 0; width: 128px; height: 128px; } 
+.rank.r28 { background-position: -4320px 0; } 
+.rank.r28m { background-position: -4352px 0; width: 128px; height: 128px; } 
+.rank.r29 { background-position: -4480px 0; } 
+.rank.r29m { background-position: -4512px 0; width: 128px; height: 128px; } 
+.rank.r30 { background-position: -4640px 0; } 
+.rank.r30m { background-position: -4672px 0; width: 128px; height: 128px; } 
+.rank.r31 { background-position: -4800px 0; } 
+.rank.r31m { background-position: -4832px 0; width: 128px; height: 128px; } 
+.rank.rv1 { background-position: -4960px 0; } 
+.rank.rv2 { background-position: -4992px 0; } 
+.rank.rv3 { background-position: -5024px 0; } 
+.rank.rv4 { background-position: -5056px 0; } 
+.rank.rv5 { background-position: -5088px 0; } 
+.rank.rv6 { background-position: -5120px 0; } 
+.rank.rv7 { background-position: -5152px 0; } 
+.rank.rv8 { background-position: -5184px 0; } 
+.rank.rv9 { background-position: -5216px 0; } 
+.rank.rv10 { background-position: -5248px 0; } 
+.rank.rv11 { background-position: -5280px 0; } 
+.rank.rv12 { background-position: -5312px 0; } 
+.rank.rv13 { background-position: -5344px 0; } 
+.rank.rv14 { background-position: -5376px 0; } 
+.rank.rv15 { background-position: -5408px 0; } 
+.rank.rv16 { background-position: -5440px 0; } 
+.rank.rv17 { background-position: -5472px 0; } 
+.rank.rv18 { background-position: -5504px 0; } 
+.rank.rv19 { background-position: -5536px 0; } 
+.rank.rv20 { background-position: -5568px 0; } 
+.rank.rv21 { background-position: -5600px 0; } 
+.rank.rv23 { background-position: -5632px 0; } 
+.rank.rv22 { background-position: -5664px 0; } 
+.rank.rv24 { background-position: -5696px 0; } 
+.rank.rv25 { background-position: -5728px 0; } 
+.rank.rv26 { background-position: -5760px 0; } 
+.rank.rv27 { background-position: -5792px 0; } 
+.rank.rv28 { background-position: -5824px 0; } 
+.rank.rv29 { background-position: -5856px 0; } 
+.rank.rv30 { background-position: -5888px 0; } 
+.rank.rv31 { background-position: -5920px 0; } 
+.rank.rvm1 { background-position: -5952px 0; width: 128px; height: 128px; } 
+.rank.rvm2 { background-position: -6080px 0; width: 128px; height: 128px; } 
+.rank.rvm4 { background-position: -6208px 0; width: 128px; height: 128px; } 
+.rank.rvm3 { background-position: -6336px 0; width: 128px; height: 128px; } 
+.rank.rvm5 { background-position: -6464px 0; width: 128px; height: 128px; } 
+.rank.rvm6 { background-position: -6592px 0; width: 128px; height: 128px; } 
+.rank.rvm7 { background-position: -6720px 0; width: 128px; height: 128px; } 
+.rank.rvm8 { background-position: -6848px 0; width: 128px; height: 128px; } 
+.rank.rvm9 { background-position: -6976px 0; width: 128px; height: 128px; } 
+.rank.rvm10 { background-position: -7104px 0; width: 128px; height: 128px; } 
+.rank.rvm11 { background-position: -7232px 0; width: 128px; height: 128px; } 
+.rank.rvm12 { background-position: -7360px 0; width: 128px; height: 128px; } 
+.rank.rvm13 { background-position: -7488px 0; width: 128px; height: 128px; } 
+.rank.rvm14 { background-position: -7616px 0; width: 128px; height: 128px; } 
+.rank.rvm15 { background-position: -7744px 0; width: 128px; height: 128px; } 
+.rank.rvm16 { background-position: -7872px 0; width: 128px; height: 128px; } 
+.rank.rvm17 { background-position: -8000px 0; width: 128px; height: 128px; } 
+.rank.rvm18 { background-position: -8128px 0; width: 128px; height: 128px; } 
+.rank.rvm19 { background-position: -8256px 0; width: 128px; height: 128px; } 
+.rank.rvm20 { background-position: -8384px 0; width: 128px; height: 128px; } 
+.rank.rvm21 { background-position: -8512px 0; width: 128px; height: 128px; } 
+.rank.rvm22 { background-position: -8640px 0; width: 128px; height: 128px; } 
+.rank.rvm23 { background-position: -8768px 0; width: 128px; height: 128px; } 
+.rank.rvm24 { background-position: -8896px 0; width: 128px; height: 128px; } 
+.rank.rvm25 { background-position: -9024px 0; width: 128px; height: 128px; } 
+.rank.rvm26 { background-position: -9152px 0; width: 128px; height: 128px; } 
+.rank.rvm27 { background-position: -9280px 0; width: 128px; height: 128px; } 
+.rank.rvm28 { background-position: -9408px 0; width: 128px; height: 128px; } 
+.rank.rvm29 { background-position: -9536px 0; width: 128px; height: 128px; } 
+.rank.rvm30 { background-position: -9664px 0; width: 128px; height: 128px; } 
+.rank.rvm31 { background-position: -9792px 0; width: 128px; height: 128px; }

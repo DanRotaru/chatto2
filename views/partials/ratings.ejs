@@ -1,0 +1,88 @@
+<div class="main-title">Рейтинги</div>
+<nav class="nav nav-main" id="ratings-nav">
+    <a class="nav__item active" data-id="1">Лучшие игроки</a>
+    <a class="nav__item" data-id="2">Топ Кри</a>
+    <a class="nav__item" data-id="3">Топ СМС</a>
+    <a class="nav__item" data-id="4">Голдоловы</a>
+    <a class="nav__item" data-id="5">Победители лотери</a>
+    <a class="nav__item" data-id="6">Последние 15 пользователей</a>
+</nav>
+
+<div id="ratings-page" style="padding: 10px 10px 10px 0;">
+
+    <table id="table-1">
+        <thead>
+            <tr>
+                <th width="70px">Место</th>
+                <th class="text-left">Пользователь</th>
+                <th width="100px" class="text-center">Опыт</th>
+                <th width="120px" class="text-center">Кристаллы</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <table id="table-2" class="hidden">
+        <thead>
+            <tr>
+                <th width="70px">Место</th>
+                <th class="text-left">Пользователь</th>
+                <th width="100px" class="text-center">Опыт</th>
+                <th width="120px" class="text-center">Кристаллы</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <table id="table-3" class="hidden">
+        <thead>
+            <tr>
+                <th width="70px">Место</th>
+                <th class="text-left">Пользователь</th>
+                <th width="100px" class="text-center">Сообщений</th>
+                <th width="100px" class="text-center">Опыт</th>
+                <th width="120px" class="text-center">Кристаллы</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <table id="table-4" class="hidden">
+        <thead>
+            <tr>
+                <th width="70px">Место</th>
+                <th class="text-left">Пользователь</th>
+                <th width="150px" class="text-center">Золотых ящиков</th>
+                <th width="120px" class="text-center">Кристаллы</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <table id="table-5" class="hidden">
+        <thead>
+            <tr>
+                <th width="70px">Место</th>
+                <th class="text-left">Пользователь</th>
+                <th width="100px" class="text-center">Побед</th>
+                <th width="120px" class="text-center">Кристаллы</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <table id="table-6" class="hidden">
+        <thead>
+            <tr>
+                <th width="70px">Место</th>
+                <th class="text-left">Пользователь</th>
+                <th width="100px" class="text-center">Опыт</th>
+                <th width="120px" class="text-center">Кристаллы</th>
+                <th width="170px" class="text-center">Дата регистрации</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+    <div class="garage-info" style="margin: 20px 10px;" id="ratings-info">
+        <svg>
+            <use xlink:href="#info-svg"></use>
+        </svg>
+        <span ondblclick="ratingsNewAll()">Топ 15 пользователей по количеству опыта</span>
+    </div>
+</div>

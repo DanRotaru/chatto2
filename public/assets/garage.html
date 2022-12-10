@@ -1,0 +1,53 @@
+<div id="a">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+<style>
+#a{
+width: 500px;
+height: 150px;
+background: #000;
+display: flex;
+overflow-x: auto;
+overflow-y: hidden;
+align-items:center;
+padding:20px;
+}
+
+#a div{
+flex-shrink: 0;
+width: 100px;
+height: 100px;
+margin-right: 10px;
+background:#111;
+}
+</style>
+
+
+
+<script src="http://localhost:3000/js/vendor/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.kinetic/jquery.kinetic.js"></script>
+<script>
+$("#a div").click(() => console.log(1));
+$('#a').kinetic();
+</script>
+

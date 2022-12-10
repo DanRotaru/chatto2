@@ -1,0 +1,40 @@
+<div id="garageViewer2">
+    <canvas width="100%" height="100%"></canvas>
+</div>
+<script>
+    var garageObj = {
+        turret: '../<%= installed.turret %>'.replace('preview.webp', ''),
+        hull: '../<%= installed.hull %>'.replace('preview.webp', ''),
+        color: [
+            '<%= installed.paintV %>',
+            {
+                animated: '<%= installed.animated.animated %>',
+                frameWidth: '<%= installed.animated.frameWidth %>',
+                frameHeight: '<%= installed.animated.frameHeight %>',
+                fps: '<%= installed.animated.fps %>',
+                numFrames: '<%= installed.animated.numFrames %>'
+            }
+        ]
+    };
+
+    var viewer1 = new TankViewer({element: document.getElementById('garageViewer'), garage: garageObj});
+    var viewer2 = new TankViewer({element: document.getElementById('garageViewer2'), garage: garageObj});
+    
+    $(document).ready(function(){
+        viewer1.init(garageObj);
+    })
+
+    function pauseGarage(i){
+        if(i == 1){
+            viewer1.continueAnimation = false;
+            viewer2.continueAnimation = true;
+            resizeViewer(2);
+        }
+        else{
+            viewer2.continueAnimation = false;
+            viewer1.continueAnimation = true;
+            resizeViewer(1);
+        }
+    };
+    
+</script>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatTO Garage</title>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0
+        }
+
+        #g-preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /* background: #000; */
+        }
+
+        #pr:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            box-sizing: border-box;
+            z-index: 2;
+            margin-left: -.5em;
+            margin-top: -.5em;
+            width: 1em;
+            height: 1em;
+            animation: round-spinner .5s linear infinite;
+            border-width: .1em;
+            border-style: solid;
+            border-radius: 50%;
+            font-size: 40px;
+            display: none;
+        }
+
+        #pr:after {
+            border-color: #0e0f18 #0e0f18 #0e0f18 #59ff32
+        }
+
+        @keyframes round-spinner {
+            0% {
+                transform: rotate(0)
+            }
+
+            to {
+                transform: rotate(1turn)
+            }
+        }
+    </style>
+    <div id="garageViewer" style="width: 100%; height: 100%; position: fixed;">
+        <canvas width="100%" height="100%"></canvas>
+    </div>
+    <div id="pr"></div>
+    <div id="g-preloader"></div>
+    <script src="../assets/garage/vendor.js"></script>
+    <script src="../assets/garage/viewer.js"></script>
+    <script>
+        let imgs = [
+            '../assets/garage/garage/bg1.webp',
+            '../assets/garage/garage/bl.webp',
+            '../assets/garage/garage/flr.jpg',
+            '../assets/garage/garage/gar1.jpg',
+            '../assets/garage/garage/pl1.webp',
+            '../assets/garage/garage/pl2.webp',
+            '../assets/garage/garage/race1.webp',
+            '../assets/garage/garage/sky1.webp'
+        ];
+
+        let j = 0;
+        let img = [];
+        for (let i = 0; i < imgs.length; i++) {
+            img[j] = new Image();
+            img[j].src = imgs[i];
+            j++;
+        }
+        img[7].onload = function () {
+            setTimeout(() => {
+                document.getElementById("g-preloader").setAttribute("style", "display:none");
+                document.getElementById("pr").setAttribute("style", "display:none");
+            }, 1000);
+        }
+
+        const garageObj = {
+            turret: '../<%= installed.turret %>',
+            hull: '../<%= installed.hull %>',
+            color: [
+                '<%= installed.paint %>',
+                {
+                    animated: '<%= installed.animated.animated %>',
+                    frameWidth: '<%= installed.animated.frameWidth %>',
+                    frameHeight: '<%= installed.animated.frameHeight %>',
+                    fps: '<%= installed.animated.fps %>',
+                    numFrames: '<%= installed.animated.numFrames %>'
+                }
+            ]
+        };
+        var viewer;
+        window.onload = function () {
+            viewer = new TankViewer({element: document.getElementById('garageViewer'), garage: garageObj})
+            viewer.init(garageObj);
+        };
+    </script>
+</body>
+</html>

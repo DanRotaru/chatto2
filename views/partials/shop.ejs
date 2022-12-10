@@ -1,0 +1,256 @@
+<% 
+function number_format(e, n, t, i) {
+    e = (e + "").replace(/[^0-9+\-Ee.]/g, "");
+    var r, a, o, d = isFinite(+e) ? +e : 0,
+        h = isFinite(+n) ? Math.abs(n) : 0,
+        l = void 0 === i ? " " : i,
+        g = void 0 === t ? " " : t,
+        u = "";
+    return 3 < (u = (h ? (r = d, a = h, o = Math.pow(10, a), "" + (Math.round(r * o) / o).toFixed(a)) : "" + Math.round(d)).split("."))[0].length && (u[0] = u[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, l)), (u[1] || "").length < h && (u[1] = u[1] || "", u[1] += new Array(h - u[1].length + 1).join("0")), u.join(g)
+}
+
+function getItems(name){
+    let data = '';
+    for(let item of shop[name]) {
+        if(item.count == 0) item.count = number_format(item.amount);
+        if(name == 'crystalls') item.desc = number_format(item.amount) + " " + item.desc;
+        else if(name == 'cases' || name == 'ultracases') item.desc = item.count;
+        // count = number_format(item.amount);
+        
+        // alertify_quest('Вы действительно хотите купить ${number_format(item.amount)} ${desc} за ${number_format(item.price)} <coin></coin> ?', 'shop.buy(${item.price}, \'${item.id}\')')"
+        data += `
+            <div class="card" onclick="shop.quest('${item.desc}', '${item.price}', '${item.id}')">
+                <div class="card__title">${item.name}</div>
+                <div class="img">
+                    <img src="${item.img}" loading="lazy">
+                    <div class="card__counter">${item.count}</div>
+                </div>
+                <div class="card__price">
+                    ${number_format(item.price)} <coin1></coin1>
+                </div>
+            </div>
+        `;
+    }
+
+    
+    return data;
+}
+%> 
+
+<div class="main-title">Магазин</div>
+<nav class="nav nav-main" id="shop-nav">
+    <a class="nav__item active" data-id="special">Спец-предложения</a>
+    <a class="nav__item" data-id="crystalls">Кристаллы</a>
+    <a class="nav__item" data-id="premium">Премиум аккаунт</a>
+    <a class="nav__item" data-id="golds">Золотые ящики</a>
+    <a class="nav__item" data-id="batteries">Батарейки</a>
+    <a class="nav__item" data-id="case">Контейнеры</a>
+    <a class="nav__item" data-id="paints">Краски</a>
+    <a class="nav__item" data-id="others">Другое</a>
+</nav>
+
+<div class="shop-wrapper">
+    <div class="shop-wrapper__main sm-scroll">
+        
+        <section class="shop-section" data-shop-id="special">
+            <div class="shop-title">ОГРАНИЧЕННЫЕ ПРЕДЛОЖЕНИЯ</div>
+            <div class="shop-description">
+                Здесь вы можете найти уникальные или временные предложения товаров по выгодной цене.
+            </div>
+            <div class="shopping-cards three">
+                <div class="card" style="background: linear-gradient(270deg, #189948 0%, #91a015 100%);">
+                    <div class="card__title">Кристаллы</div>
+                    <div class="img">
+                        <img src="../img/shop/crys1.webp" loading="lazy">
+                        <div class="card__counter">5 000</div>
+                    </div>
+                    <div class="card__price">
+                        1 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card" style="background: linear-gradient(270deg, #994918 0%, #a02f15 100%)">
+                    <div class="card__title">Кристаллы</div>
+                    <div class="img">
+                        <img src="../img/shop/crys1.webp" loading="lazy">
+                        <div class="card__counter">5 000</div>
+                    </div>
+                    <div class="card__price">
+                        1 <coin1></coin1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-section" data-shop-id="crystalls">
+            <div class="shop-title">Кристаллы</div>
+            <div class="shop-description">
+                Здесь вы можете купить кристаллы, чтобы использовать их для приобретения нужных вам вещей в гараже.
+            </div>
+            <div class="shopping-cards">
+                <%- getItems('crystalls') %>
+            </div>
+        </section>
+
+        <section class="shop-section" data-shop-id="premium">
+            <div class="shop-title">Премиум аккаунт</div>
+            <div class="shop-description">
+                Приобретая премиум аккаунт, вы получаете ряд преимуществ — на 100% больше кристаллов, на 100% больше опыта за каждое сообщение.
+            </div>
+            <div class="shopping-cards">
+                <%- getItems('premium') %>
+            </div>
+        </section>
+
+        <section class="shop-section" data-shop-id="golds">
+            <div class="shop-title">Золотые ящики</div>
+            <div class="shop-description">
+                Этот предмет позволяет вам сбросить золотой ящик в чат. Сброшенный ящик всегда содержит 1000 кристаллов, в том числе во время праздничных акций.
+            </div>
+            <div class="shopping-cards three">
+                <%- getItems('golds') %>
+            </div>
+        </section>
+
+        <section class="shop-section" data-shop-id="batteries">
+            <div class="shop-title">Батарейки</div>
+            <div class="shop-description">
+                Специальный припас, позволяющий заработать дополнительный опыт и кристаллы, после чего батарейки уменьшаются на 1. Одна батарейка даёт +5 дополнительный опыт или +10 дополнительные кристаллы за сообщение.
+            </div>
+            <div class="shopping-cards three">
+                <%- getItems('batteries') %>
+            </div>
+        </section>
+
+        <section class="shop-section" data-shop-id="case">
+            <div class="shop-title">Контейнеры</div>
+            <div class="shop-description">
+                Контейнеры содержат в себе один из следующих предметов — кристаллы, припасы, золотые ящики, дни премиум аккаунта, опыт, обычные контейнеры, скины вооружения. После покупки контейнеры появляются у вас в гараже в разделе «Контейнеры» где их можно открыть. Контейнеры могут быть получены бесплатно в игре.
+            </div>
+            <div class="shopping-cards three">
+                <%- getItems('cases') %>
+            </div>
+        </section>
+
+        <section class="shop-section" data-shop-id="ultracase">
+            <div class="shop-title">Ультраконтейнеры</div>
+            <div class="shop-description">
+                Ультраконтейнеры могут содержать: кристаллы, припасы, золотые ящики, премиум аккаунт, краски и уникальные скины. Приобрести их можно только во время специальных событий и акций.
+            </div>
+            <div class="shopping-cards three">
+                <%- getItems('ultracases') %>
+            </div>
+        </section>
+        
+        <section class="shop-section" data-shop-id="paints">
+            <div class="shop-title" data-shop-id="paints">Краски</div>
+            <div class="shop-description">
+                Уникальные декоративные покрытия для танков.
+            </div>
+            <div id="shopping-paints" class="shopping-cards"></div>
+        </section>
+
+        <section class="shop-section" data-shop-id="others">
+            <div class="shop-title">Другое</div>
+            <div class="shop-description">
+                Прочие товары.
+            </div>
+    
+            <div class="shopping-cards middle">
+                <div class="card">
+                    <div class="card__title">Разбан</div>
+                    <div class="img">
+                        <img src="../img/shop/unban.webp" loading="lazy">
+                    </div>
+                    <div class="card__price">
+                        20 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__title">Переименование</div>
+                    <div class="img">
+                        <img src="../img/shop/nickname.webp" loading="lazy">
+                    </div>
+                    <div class="card__price">
+                        100 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__title" title="Переименование (RU)">(RU) Переименование</div>
+                    <div class="img">
+                        <img src="../img/shop/nickname.webp" loading="lazy">
+                    </div>
+                    <div class="card__price">
+                        300 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__title" title="Кристальная карта">Кристальная карта</div>
+                    <div class="img">
+                        <img src="../img/shop/card_kry.webp" loading="lazy">
+                    </div>
+                    <div class="card__price">
+                        50 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__title" title="Создатель промо-кодов">Создатель промо-кодов</div>
+                    <div class="img">
+                        <img src="../img/shop/card-create.webp" loading="lazy">
+                    </div>
+                    <div class="card__price">
+                        80 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__title" title="Создатель премиум промо-кодов">Создатель премиум промо-кодов</div>
+                    <div class="img">
+                        <img src="../img/shop/card-create.webp" loading="lazy" style="filter: hue-rotate(255deg);">
+                    </div>
+                    <div class="card__price">
+                        289 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__title" title="Боевой пропуск">Боевой пропуск</div>
+                    <div class="img">
+                        <img src="../img/shop/pass.webp" loading="lazy">
+                    </div>
+                    <div class="card__price">
+                        149 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__title" title="Удвоитель звёзд">Удвоитель звёзд</div>
+                    <div class="img">
+                        <img src="../img/shop/pass2.webp" loading="lazy">
+                    </div>
+                    <div class="card__price">
+                        149 <coin1></coin1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__title" title="Удаление аккаунта">Удаление аккаунта</div>
+                    <div class="img">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAMAAABG8BK2AAAA4VBMVEUAAAD0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0Qzb0QzYIlM2QAAAASnRSTlMAAQIDBAYJCgsRExQfJSYnKCkqKywtLjU2Nzg8P0VJUVJVVldYXG9xdYWJjpSVl5ianaCipabDx87P0dPV3uDi5ujp6+3z9ff5/T9sO4IAAAHcSURBVFiFrdfXUsNADAXQ60DohE7ovffeCSR0/f8H8ZCQrHe1krxBj76aM+MZzx0Z6ExpamN9sgTLDK9sLw3w0XidiOh1VEd6L4mIaC9jskVqzYKmlO9am1eh01ZUp60QXfuOoyiOowROThGdnOI5nkI0b1RyTqBEnUBxHEaJOIzSdliFdVil5YzxCtGcUSE6Akr1GOM7UYVoBpPRzHMEhS6wJjCuIynUwKrEUNWkUB0VkflzZIXOkNUMjqJQBRiRN6iqK/sAMKs5mnLc/Iw158Wk6I5N6co5dgsn2TnJ11+ic+KXcZITKEkOoyQ4rFLYiSgFnahSyBGUAs6ppJgdRTE6qmJyDIrBMSkoPyvMokm5V1+q+i+KwTEpqmNUFMesiE4BRXAKKVGnoBJxyg8FFdZJUBgnSQmcRMVzkpWc04Xi3nXdKJ27TlHO5i1Or6Zkah/OArhUFbVXv/sxZFBUZxfLFkVzHrFpUoAZae8j9jflK7Jzg36jIjobwI5REZxaD5CdGxVgmt98HwRiDqNEnPehZsg5rMI6fwrnRBTG6SihE1UCx1V8R1CA6Z+okndEJef4iusoiuOECpAdNrMD/ZaqfBERUW2QTacu3hrnEyoCoG/n6fN2q6fz4BcHYYZUEHFBYAAAAABJRU5ErkJggg==" loading="lazy">
+                        <div class="card__counter">2 000 000 <kry></kry></div>
+                    </div>
+                    <div class="card__price">
+                        20 <coin1></coin1> или <kry></kry>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+    function paintShopBuy(id, name){
+        alertify_quest(`Вы действительно хотите купить краску ${name}?`, `garage.buy('${id}', 'paint')`);
+    }
+</script>
+
+<!-- <div class="garage-info questions-info">
+    <svg>
+        <use xlink:href="#info-svg"></use>
+    </svg>
+    Здесь вы сможете закупится.
+</div> -->

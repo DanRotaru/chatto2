@@ -1,0 +1,222 @@
+header {
+    // user-select: none;
+    position: relative;
+    z-index: 1;
+    height: $header-height;
+
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(-180deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+        opacity: 0.5;
+    }
+
+    .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #424E55;
+        position: relative;
+        z-index: 2;
+    
+        &__item{
+            display: flex;
+            height: inherit;
+            align-items: center;
+
+            .item-number{
+                min-width: 100px;
+
+                &__num{
+                    height: 50%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 12px;
+                    padding: 0 10px;
+                    cursor: pointer;
+                    white-space: nowrap;
+
+                    &:hover{
+                        background: linear-gradient(270deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+                    }
+
+                    img{
+                        height: 12px;
+                    }
+                    svg{
+                        width: 12px;
+                        height: 12px;
+                        fill: #00D4FF;
+                    }
+                    svg.coin-plus{
+                        fill: #FC0
+                    }
+
+                    .num{
+                        display: flex;
+                        align-items: center;
+
+                        div{
+                            margin: 0 6px;
+                        }
+                    }
+                }
+                &__num:last-child{
+                    border-top: 1px solid rgba(255, 255, 255, 0.25);
+                }
+            }
+        }
+        &__item:last-child{
+            align-items: initial;
+        }
+        &__btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            color: #fff;
+            width: $header-height;
+            height: $header-height;
+            cursor: pointer;
+            position: relative;
+            border-right: 1px solid rgba(255, 255, 255, 0.25);
+            transition: .2s ease background-color;
+
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.08);
+
+                img, svg{
+                    opacity: 1;
+                }
+            }
+            &:first-child {
+                border-left: 1px solid rgba(255, 255, 255, 0.25);
+            }
+            img{
+                // color: #D7FFFF;
+                // filter: sepia(100%) hue-rotate(150deg) saturate(500%);
+                height: 22px;
+                opacity: .8;
+                transition: .2s ease opacity;
+            }
+            svg{
+                height: 22px;
+                opacity: .8;
+                transition: .2s ease opacity;
+            }
+            svg:not(.nofill){
+                // fill: #fff;
+                fill: var(--color);
+                stroke: var(--color);
+                stroke-width: 0;
+            }
+            svg:not(.nostroke){
+                stroke: var(--color);
+            }
+            .letter{
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                background-color: rgba(255, 255, 255, 0.1);
+                font-size: 11px;
+                font-weight: 500;
+                padding: 1px 3px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: rgb(255 255 255 / 20%) 0 0 0 1px;
+                border-radius: 2px;
+            }
+        }
+        &__btn.bl-1{
+            border-left: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .btn-premium{
+            border-left: none;
+            background-image: radial-gradient(100% 100% at 0% 0%, rgba(255, 204, 0, 0.75) 0%, rgba(255, 38, 74, 0.5) 50%, rgba(255, 38, 74, 0) 100%);
+        }
+
+
+        .user-details{
+            display: flex;
+            align-items: center;
+            margin: 0 8px;
+            width: 271px;
+            overflow: hidden;
+
+            width: 279px;
+            margin-right: 0;
+
+            .rank{
+                width: 80px;
+                height: 55px;
+                background-size: 55px;
+                background-repeat: no-repeat;
+            }
+
+            &__name{
+                font-size: 13px;
+                width: 100%;
+                margin: 0 10px 0 6px;
+
+                div:first-child{
+                    white-space: nowrap;
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+                }
+                div:last-child{
+                    font-size: 11.2px;
+                    color: #76ff33;
+                    font-weight: bold;
+                }
+                span.name{
+                    text-overflow: ellipsis;
+                    display: inline-block;
+                    max-width: 100px;
+                    overflow: hidden;
+                }
+            }
+            &__img{
+                height: 50px;
+                width: 50px;
+            }
+
+            .progress{
+                background-color: rgba(255, 255, 255, 0.2);
+                position: relative;
+                width: 100%;
+                height: 1.9px;
+                margin: 3px 0;
+                display: block;
+                overflow: hidden;
+                
+
+                div{
+                    background: #76ff33;
+                    position: relative;
+                    width: 0;
+                    height: 100%;
+                }
+                &.init div{
+                    transition: .2s ease width;
+                }
+            }
+        }
+
+        svg.svg1{
+            height: 35px;
+        }
+        svg.svg2{
+            height: 60px;
+        }
+    }
+}

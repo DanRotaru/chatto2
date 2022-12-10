@@ -1,0 +1,156 @@
+.shop-wrapper{
+    display: flex;
+    width: calc(100% - 10px);
+    height: calc(100% - 85px);
+    padding-left: 10px;
+
+    &__left{
+        width: 55%;
+    }
+    &__main{
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        height: 100%;
+        padding: 20px 16px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin: 0 auto;
+        max-width: 1050px;
+
+        #shopping-paints .card img, .shopping-cards.middle .card img{
+            margin-top: 0 !important;
+        }
+    }
+    .shop-title{
+        font-size: 20px;
+        font-weight: 500;
+        padding-top: 10px;
+        text-transform: uppercase;
+    }
+    .shop-description{
+        font-size: 12px;
+        opacity: .6;
+    }
+    .shopping-cards {
+        gap: 15px;
+        margin: 15px 0;
+        // display: grid;
+        // grid-template-columns: repeat(4, 1fr);
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        &.three{
+            flex-wrap: nowrap;
+            .card{
+                width: 100%;
+                min-width: 150px;
+
+                .img::before{
+                    opacity: .3;
+                }
+            }
+            
+        }
+
+        .card{
+            background: linear-gradient(270deg, rgb(24, 83, 153) 0%, rgb(21, 127, 160) 100%);
+            width: 150px;
+            height: 190px;
+            box-shadow: rgb(0 0 0 / 12%) 0px 5px 0px;
+            transition: .2s ease transform;
+            cursor: pointer;
+            position: relative;
+
+            &:hover {
+                transform: translateY(-1px);
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                top: 0;
+                background: rgb(255 255 255 / 5%);
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: .2s ease opacity;
+            }
+            &:hover::after{
+                opacity: 1;
+            }
+
+            &__title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+                text-shadow: rgb(0 0 0) 0px 0px 2px;
+                font-size: 13px;
+                line-height: 1em;
+                font-weight: 500;
+                text-align: center;
+                padding: 10px;
+                background: rgb(255 255 255 / 10%);
+            }
+            .img{
+                text-align: center;
+                position: relative;
+                height: calc(100% - 68px);
+                overflow: hidden;
+
+                &:before {
+                    content: '';
+                    background: url(../img/blueRays.webp);
+                    position: absolute;
+                    left: 0;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    opacity: .6;
+                }
+                img{
+                    position: absolute;
+                    max-width: 100%;
+                    max-height: 100px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    margin-top: -10px;
+                }
+            }
+            .card__counter {
+                position: absolute;
+                bottom: 8px;
+                left: 50%;
+                transform: translate(-50%);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+                text-shadow: rgb(0 0 0) 0px 0px 2px;
+                font-size: 13px;
+                font-weight: 500;
+            }
+            .card__price {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+                text-shadow: rgb(0 0 0) 0px 0px 2px;
+                font-size: 15px;
+                line-height: 1em;
+                font-weight: 500;
+                text-align: center;
+                padding: 10px;
+                background: rgb(0 0 0 / 15%);
+                width: 100%;
+            }
+        }
+    }
+}

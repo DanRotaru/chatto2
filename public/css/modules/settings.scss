@@ -1,0 +1,96 @@
+.settings-wrapper{
+    padding: 20px 30px 30px 30px;
+    background: rgb(255 255 255 / 10%);
+    margin-right: 5px;
+
+    .settings-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        position: relative;
+
+        &::before{
+            content: 'Сохранено';
+            position: absolute;
+            right: 50px;
+            top: 10px;
+            font-size: 12px;
+            transition: .2s ease transform, .2s ease opacity;
+            transform: translate(50%);
+            opacity: 0;
+        }
+        &.saved::before{
+            transform: translate(0);
+            opacity: 1;
+        }
+
+        &.col{
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: start;
+        }
+
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+
+        .description{
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 2px;
+        }
+    }
+
+    select{
+        width: 20%;
+        min-width: 150px;
+    }
+}
+.select-item{
+    &.open{
+        ul{
+            height: 74px;
+        }
+    }
+    &__title{
+        font-size: 13px;
+    }
+    ul{
+        margin: 0;
+        list-style: none;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 40px;
+        max-height: 100%;
+        overflow: hidden;
+        width: 120%;
+        position: relative;
+        transition: 0.2s ease height;
+
+        li{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        &:after {
+            content: '';
+            background-image: url("data:image/svg+xml,%0A%3Csvg width='13' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='.5' d='M6.5 11.993L12.995.743H.005L6.5 11.994z' fill='%23fff'/%3E%3C/svg%3E");
+            position: absolute;
+            right: 10px;
+            top: 13px;
+            width: 8px;
+            height: 8px;
+            background-size: contain;
+            display: block;
+            background-repeat: no-repeat;
+        }
+    }
+}

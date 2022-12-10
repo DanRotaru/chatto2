@@ -1,0 +1,225 @@
+msg {
+	margin: 3px 2px 0 1px;
+	padding: 0 2px 0 2px;
+	padding: 2px;
+	border-radius: 3px;
+	position: relative;
+	display: block;
+	text-shadow: 0px 1px 3px #000
+}
+
+msg img {
+	vertical-align: bottom;
+	margin-right: 2px;
+}
+
+msg[by="sys"] {
+	user-select: none;
+	color: yellow;
+	color: #80FF80;
+}
+
+msg[by="sys"] a {
+	color: #80FF80 !important;
+}
+
+msg,
+msg a {
+	font: 11.3px 'PT Sans', 'Myriad Pro', Arial, sans-serif !important;
+}
+
+msg * {
+	font-size: 11px;
+	font-family: 'PT Sans', 'Myriad Pro', Arial, sans-serif !important;
+}
+
+msg user {
+	color: orange;
+	display: inline-block;
+}
+
+msg user .rank {
+	top: 2px;
+}
+
+.rank {
+	cursor: pointer;
+	position: relative;
+	margin-right: 2px;
+	display: inline-block;
+}
+
+msg .clan {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	top: -1px;
+	margin-right: 2px;
+	color: #12ff00;
+	font-size: 11px;
+	user-select: none;
+}
+
+msg .group-icon {
+	position: relative;
+	top: 1px;
+}
+
+msg .rank {
+	top: 1px;
+	cursor: pointer
+}
+
+.emoji {
+	font-size: 16px;
+}
+
+/* msg:not([by=sys]) .rank{
+	width: 18px !important;
+    height: 16px !important;
+} */
+
+msg .name {
+	color: #12ff00;
+}
+
+msg .pm {
+	color: #12ff00;
+	text-decoration: none !important;
+	user-select: none;
+}
+
+.music {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAP1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////9Du/pqAAAAFHRSTlMAAwUOHh8zPEBOYnV5qrrD0eDk+Yz+XmQAAABISURBVBhXY2CAAg4QgHFAQAQE8AsI8fLyogjwIPPIEWBCFeAUFhFAFmAHuwFJgB9dQBAswIUQ4AYLsCIEGPlQFQABCxszjAkAPxIEi24nf6IAAAAASUVORK5CYII=);
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+msg .promocode {
+	background: #3F51B5;
+	padding: 2px 4px;
+	font-size: 11px;
+	border-radius: 3px;
+	position: initial;
+	margin-top: -2px;
+}
+
+msg .name {
+	color: #12ff00;
+}
+
+msg .pm {
+	color: #12ff00;
+	text-decoration: none !important;
+	user-select: none;
+}
+
+msg .user {
+	float: left;
+	color: #12ff00;
+}
+
+msg .user .label {
+	vertical-align: baseline;
+	float: left;
+}
+
+msg .user .uid {
+	float: left;
+}
+
+msg .user .devider {
+	color: #12ff00;
+	vertical-align: baseline;
+	padding-right: 1px;
+	float: left;
+	padding-left: 1px;
+}
+
+msg .user .devider:before {
+	content: '—';
+}
+
+msg.prvt .user .devider:before {
+	content: '→';
+}
+
+msg .user .label .label-rank {
+	float: left;
+	margin-top: -1px;
+}
+
+msg .message {
+	color: #fff;
+	/*
+    display: table;
+	word-break: break-word;
+	*/
+}
+
+msg .message:before {
+	content: ':';
+	padding-right: 4px;
+	color: #12ff00;
+}
+
+msg .user a {
+	color: #12ff00;
+	text-shadow: none;
+}
+
+msg .user .uid a {
+	color: #12ff00 !important;
+	text-shadow: none !important;
+	text-decoration: none !important;
+}
+
+msg .icon-remove {
+    width: 14px!important;
+    height: 14px!important;
+    background: url(../img/delete.png);
+    background-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+}
+.rank {
+    cursor: pointer;
+    position: relative;
+    margin-right: 2px;
+    display: inline-block;
+}
+#chat_messages a.pm {
+    color: #12ff00;
+}
+.chat-bg {
+    background: url(../img/greenbg.png) no-repeat;
+    background-color: #0c220d;
+    border-radius: 5px;
+    border: 1px solid #6e6e6e;
+    border-bottom: 1px solid #9c9c9c;
+    border-right: 1px solid #9c9c9c;
+    padding: 2px;
+    height: calc(100vh - 150px);
+}
+.chat-container {
+    position: absolute;
+    color: #fff;
+    background: url(../img/m_bg.png);
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 63%);
+    -moz-box-shadow: 1px 1px 3px 1px rgba(0,0,0,.63);
+    box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 63%);
+    border: 1px solid #6e6e6e;
+    border-top: 1px solid #9c9c9c;
+    border-left: 1px solid #6c6c6c;
+    font: 12px "PT SANS",sans-serif;
+    left: 5px;
+    width: 435px;
+    right: 5px;
+    top: 75px;
+    padding: 5px;
+    height: calc(100vh - 97px);
+    margin-top: -1px;
+    margin-left: 0;
+}

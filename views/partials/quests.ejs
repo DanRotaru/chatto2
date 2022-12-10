@@ -1,0 +1,100 @@
+<div class="main-title">Задания</div>
+<nav class="nav nav-main">
+    <a class="nav__item active">Ежедневные</a>
+    <a class="nav__item">Турнир</a>
+    <a class="nav__item">Челленджи</a>
+</nav>
+<div class="quests" data-id="daily_quests">
+    <% if(!info.hasTasks) { %> 
+        <div class="quests-start">
+            <button class="btn green" style="width: 100px" onclick="Tasks.start()">Начать</button>
+        </div>
+        <div class="quests__item">
+            <div class="quests__item-pretitle">Задание</div>
+            <img src="https://www.svgrepo.com/show/239403/chat-conversation.svg" alt="" style="filter: invert(1);">
+            <div class="title">
+                <div class="quest-name">Написать 300 сообщений</div>
+                <div class="progress-title">0 / 300</div>
+            </div>
+            <div class="progress">
+                <div></div>
+            </div>
+            <div class="prize">
+                <div class="prize__title">Приз</div>
+                <div class="prize__img">
+                    <div class="prize__img-title">
+                        <div>Кристаллы</div>
+                        <div class="prize-amount">x 10000</div>
+                    </div>
+                    <img src="assets/img/kry_big.webp" alt="">
+                </div>
+            </div>
+            <button class="quest-change">
+                Сменить <span class="num">999</span> <kry></kry>
+            </button>
+        </div>
+        <div class="quests__item">
+            <div class="quests__item-pretitle">Задание</div>
+            <img src="assets/img/task1.webp" alt="img">
+            <div class="title">
+                <div class="quest-name">Набрать 5000 опыта</div>
+                <div class="progress-title">0 / 5000</div>
+            </div>
+            <div class="progress">
+                <div></div>
+            </div>
+            <div class="prize">
+                <div class="prize__title">Приз</div>
+                <div class="prize__img">
+                    <div class="prize__img-title">
+                        <div>Опыт</div>
+                        <div class="prize-amount">x 500</div>
+                    </div>
+                    <img src="assets/img/score_big.webp" alt="">
+                </div>
+            </div>
+            <button class="quest-change">
+                Сменить <span class="num">999</span> <kry></kry>
+            </button>
+        </div>
+        <div class="quests__item">
+            <div class="quests__item-pretitle">Задание</div>
+            <img src="assets/img/activeGoldBox.svg" alt="">
+            <div class="title">
+                <div class="quest-name">Поймать 3 золотых ящика</div>
+                <div class="progress-title">0 / 3</div>
+            </div>
+            <div class="progress">
+                <div></div>
+            </div>
+            <div class="prize">
+                <div class="prize__title">Приз</div>
+                <div class="prize__img">
+                    <div class="prize__img-title">
+                        <div>Кристаллы</div>
+                        <div class="prize-amount">x 10000</div>
+                    </div>
+                    <img src="assets/img/kry_big.webp" alt="">
+                </div>
+            </div>
+            <button class="quest-change">
+                Сменить <span class="num">999</span> <kry></kry>
+            </button>
+        </div>
+    <% } %> 
+</div>
+
+<div class="quests hidden" data-id="weekly_tournaments">
+
+</div>
+
+<div class="quests hidden" data-id="challenges">
+
+</div>
+
+<div class="garage-info quests-info">
+    <svg>
+        <use xlink:href="#info-svg"></use>
+    </svg>
+    Новые миссии появляются на месте выполненных.
+</div>

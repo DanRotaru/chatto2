@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="style.css">
+    <title>ChatTO new</title>
+</head>
+<body>
+<script>
+// var MY = {
+//     login: "<?=$alls['login'];?>",
+//     group: "<?=$alls['group'];?>",
+//     helper: "<?=$alls['helper'];?>",
+//     rank: "<?=$alls['rang_id'];?>",
+//     score: "<?=$alls['rang'];?>",
+//     kry: <?=$alls['kry'];?>,
+//     key: "<?=$alls['hash'];?>",
+//     upper: <?php echo $alls['s6'];?>
+// };
+</script>
+
+
+
+<div class="new-ui">
+    <div class="navbar">
+        <div class="panel">
+            <div class="inner">
+                <div class="lcontent">
+                    <div class="rang">
+                    <div class="inline">
+                        <img src="https://tankionline.com/play/static/images/medium/31.09b2f1cb.webp" onclick="profile('DanRotaru')" class="img">
+                    </div>
+                    <div class="inline">
+                        <div class="name">Легенда 1 | DanRotaru</div>
+                        <progress min="0" max="100" value="25" class="progress" id="rank-width"></progress>
+                        <div class="score flex">
+                            <i class="xp"></i> <span id="xp">1 000 / 2000</span>
+                        </div>
+                    </div>
+                </div>
+                    <button class="ui-btn" tooltip="Настройки" flow="left">
+                        <i class="icon settings"></i>
+                    </button>
+                    <button class="ui-btn" onclick="menu()" tooltip="Меню" flow="right">
+                        <i class="icon menu"></i>
+                    </button>
+                    
+                
+                </div>
+    
+                <div class="ccontent">
+                    <button class="ui-btn">
+                        <i class="icon clan"></i>
+                    </button>
+                </div>
+    
+                <div class="rcontent">
+                    <button class="ui-btn" tooltip="Задания" flow="left">
+                        <i class="icon quests"></i>
+                    </button>
+
+                    <button class="ui-btn p-15">
+                        <i class="icon coin"></i>
+                        <span class="coins">122</span>
+                    </button>
+
+                    <button class="ui-btn p-15">
+                        <i class="icon crystall"></i>
+                        <span class="cry">454 454</span>
+                    </button>
+
+                    <button class="ui-btn" onclick="toggleFullScreen()">
+                        <i class="icon fullscreen"></i>
+                    </button>
+                    <button class="ui-btn">
+                        <i class="icon exit"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="umenu">
+    
+        <div class="Litem" onclick="load_page(3)">
+    <div class="m-icon li-rules"></div>
+    <div class="t-item">Правила</div>
+    </div>
+    <div class="Litem-h0">
+    <div class="Litem" onclick="load_page(2)">
+    <div class="m-icon li-top"></div>
+    <div class="t-item">Зал славы <div class="Litem-right"></div></div>
+    </div>
+    <div class="Litem Litems" id="Litem0" onclick="window.open('https://chatto.ru/ratings','_blank')">
+    <div class="m-icon li-top1"></div>
+    <div class="t-item">Рейтинги</div>
+    </div>
+    </div>
+    <div class="Litem" onclick="load_page(5)">
+    <div class="m-icon li-online"></div>
+    <div class="t-item">Онлайн</div>
+    </div>
+    <div class="Litem" onclick="load_page(11)">
+    <div class="m-icon li-updates"></div>
+    <div class="t-item">Обновления</div>
+    </div>
+    <div class="Litem-h2">
+    <div class="Litem">
+    <div class="m-icon li-card"></div>
+    <div class="t-item">Под. карты <div style="left:16px" class="Litem-right"></div></div>
+    </div>
+    <div class="Litem Litems" id="Litem5" onclick="load_page(6)">
+    <div class="m-icon li-bcard"></div>
+    <div class="t-item">Купить карту</div>
+    </div>
+    <div class="Litem Litems" id="Litem6" onclick="load_page(7)">
+    <div class="m-icon li-bcard"></div>
+    <div class="t-item">Активировать</div>
+    </div>
+    
+    <div class="Litem Litems" id="Litem7" onclick="$('#list').hide();promo_create()">
+    <div class="m-icon li-bcard"></div>
+    <div class="t-item">Промо-код</div>
+    </div>
+    
+    </div>
+    <div class="Litem-h1">
+    <div class="Litem" onclick="load_page(4)">
+    <div class="m-icon li-other"></div>
+    <div class="t-item">Прочее <div style="left:30px" class="Litem-right"></div></div>
+    </div>
+    <div class="Litem Litems" id="Litem1" onclick="$load('#garage','../src/t_pages/u_video.php');zv();">
+    <div class="m-icon li-youtube"></div>
+    <div class="t-item">YouTube</div>
+    </div>
+    <div class="Litem Litems" id="Litem2" onclick="$load('#garage','../src/t_pages/p_admins.php');zv();">
+    <div class="m-icon li-admins"></div>
+    <div class="t-item">Администрация</div>
+    </div>
+    <div class="Litem Litems" id="Litem3" onclick="smiles();zv();">
+    <div class="m-icon li-smile" style="width:  14px;height:  14px;margin-left:  3px;"></div>
+    <div class="t-item">Смайлы</div>
+    </div>
+    </div>
+    
+    <div class="Litem" onclick="LotoL(1)">
+    <div class="m-icon li-loto"></div>
+    <div class="t-item">Лотерея</div>
+    </div>
+    <div class="Litem" onclick="window.open('https://vk.com/chatto_ru','_blank');zv();">
+    <div class="m-icon li-vk"></div>
+    <div class="t-item" style="left:2px">Наша группа вк</div>
+    </div>
+        
+    <div class="Litem" onclick="load_page(8)">
+    <div class="m-icon li-banlist"></div>
+    <div class="t-item" style="left:2px">Бан лист</div>
+    </div>
+        </div>
+
+<div class="chat">
+    <div class="title">Чат</div>
+    <div id="chat_messages"></div>
+    <div class="form">
+        <input type="text" name="" id="" placeholder="Написать в чате">
+        <div>Отправить</div>
+    </div>
+</div>
+
+
+<div class="garage">
+<div class="tank-view">
+        <div class="iTitle">Ваш танк</div>
+        <div id="viewGarage">
+            <!--
+                <object type="application/x-shockwave-flash" data="https://chatto.ru/assets/garage/flash/viewer.swf?v=9" style="visibility: visible;width: 100%;height: 300px;border-radius: 5px;border: none;" bgcolor="#0C220D">
+		<param name="menu" value="false">
+		<param name="seamlesstabbing" value="false">
+		<param name="wmode" value="transparent">
+		<param name="scale" value="noScale">
+		<param name="allowFullscreen" value="true">
+		<param name="allowScriptAccess" value="always">
+		<param name="wmode" value="direct">
+		<param name="flashvars" value="mountedItemsXmlUrl=https://chatto.ru/assets/garage/view.php">
+		<div class="swfobj">Текущий танк не может быть отображён, потому что плагин Adobe Flash недоступен или отключен на этой странице. <a href="https://get.adobe.com/flashplayer">Включить</a>.</div>
+</object>
+                -->
+</div>
+    </div>
+
+    <div class="tank-info">
+        <div class="iTitle">Информация</div>
+        <div style="
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 40px;
+"><div style="
+    font-size: 12px;
+">Бонус</div>+60 <img src="https://tankionline.com/play/static/images/garage/crystal.019d867d.svg" style="
+    height: 14px;
+"></div><div style="
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 40px;
+            "><div style="
+    font-size: 12px;
+">Стоимость</div> 1 000 000 <img src="https://tankionline.com/play/static/images/garage/crystal.019d867d.svg" style="
+    height: 14px;
+"></div><div style="
+    width: 210px;
+    text-align: left;
+    margin-left: 100px;
+    margin-top: 40px;
+"><h1 style="
+    font-size: 16px;
+">Гром PR</h1><span style="
+    font-size: 11px;
+">Гром — первая пушка, получившая скин из новой серии Prime. Этот скин подчёркивает брутальность пушки и серьёзность намерений её владельца. Зачем красоваться, когда можно сильно ударить!</span></div>
+    </div>
+
+    <div class="footer">
+    <div class="items">
+            <div class="item">
+                <div class="name">Смоки</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/6/61/Turret_smoky_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Огнемёт</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/thumb/6/61/Turret_firebird_m3_2.png/160px-Turret_firebird_m3_2.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Твинс</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/d/d3/Turret_twins_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Рельса</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/thumb/c/c9/Turret_railgun_m3.png/160px-Turret_railgun_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Изида</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/5/5f/Turret_isida_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Гром</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/thumb/3/3c/Turret_thunder_m3.png/160px-Turret_thunder_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div><div class="item">
+                <div class="name">Фриз</div>
+                <div class="m">М3</div>
+                <div class="image">
+                    <img src="https://ru.tankiwiki.com/images/ru/f/f2/Turret_freeze_m3.png">
+                </div>
+            </div>
+        </div>
+        <div class="gmenu">
+            <div class="link active">Пушки</div>
+            <div class="link">Корпуса</div>
+            <div class="link">Краски</div>
+            <div class="link">Припасы</div>
+            <div class="link">Контейнеры</div>
+            <div class="link">Особое</div>
+            <div class="link">Подарки</div>
+        </div>
+    </div>
+</div>
+
+</div>
+<div id="score_bar_senter"></div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="scripts.js"></script>
+<script>
+    load_messes();
+var usermenu = 0;
+
+
+function menu() {
+    if(usermenu == 0){
+        let x = $("body > div > div.navbar > div > div > div.lcontent > button:nth-child(3)").offset().left;
+        $(".umenu").css("left: calc("+x+"px - 35px);");
+        $(".umenu").show();
+        $( ".umenu" ).animate({
+            opacity: 1,
+            top: 73
+            }, 200, function() {
+                usermenu = 1;
+        });
+    }else{
+        let x = $("body > div > div.navbar > div > div > div.lcontent > button:nth-child(3)").offset().left;
+        $(".umenu").css("left: calc("+x+"px - 35px);");
+        
+        $( ".umenu" ).animate({
+            opacity: 0,
+            top: 80
+            }, 200, function() {
+                usermenu = 0;
+                $(".umenu").hide();
+        });
+    }
+    
+}
+
+
+</script>
+</body>
+</html>

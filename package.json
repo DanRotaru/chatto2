@@ -1,0 +1,39 @@
+{
+  "name": "chatto",
+  "version": "1.0.0",
+  "description": "ChatTO App MongoDB + Socket.io + Express",
+  "author": "DanRotaru",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --quiet index",
+    "startd": "nodemon index",
+    "server": "node index",
+    "minifyjs": "minify public/scripts.js > public/js/index.js",
+    "minifycss": "minify public/css/style.css > public/css/index.css"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglifycss": "^1.1.0",
+    "gulp-watch": "^5.0.1",
+    "minify": "^8.0.4",
+    "nodemon": "^2.0.15",
+    "sass": "^1.49.8"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cookie-session": "^2.0.0",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "htmlspecialchars": "^1.0.5",
+    "mongoose": "^6.2.2",
+    "mongoose-sequence": "^5.3.1",
+    "socket.io": "^4.4.1",
+    "text-svg": "^1.0.4"
+  }
+}

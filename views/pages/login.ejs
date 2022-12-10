@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<%- include('../partials/head'); %>
+    <link rel="stylesheet" href="css/auth.css">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+</head>
+</head>
+
+<body>
+    <div class="bg"></div>
+
+    <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#bfd5ff" viewBox="0 0 89.77 31.93" style="height: 40px">
+            <path d="M67,51.3a8.88,8.88,0,0,1-6.62-2.66,9,9,0,0,1-2.61-6.57,9,9,0,0,1,2.61-6.58A8.91,8.91,0,0,1,67,32.85,9,9,0,0,1,71.46,34,8.31,8.31,0,0,1,74.65,37l-3,1.75a4.7,4.7,0,0,0-1.88-1.87,6.08,6.08,0,0,0-6.91,1,5.82,5.82,0,0,0-1.58,4.21,5.78,5.78,0,0,0,1.58,4.19A5.59,5.59,0,0,0,67,47.88a5.74,5.74,0,0,0,2.75-.67,4.52,4.52,0,0,0,1.86-1.84l3,1.75a8.3,8.3,0,0,1-3.17,3.05A9,9,0,0,1,67,51.3Z" transform="translate(-57.79 -32.85)"/><path d="M83.9,37.92a4.56,4.56,0,0,1,3.43,1.39,5.26,5.26,0,0,1,1.36,3.85V51H85.42V43.57a2.62,2.62,0,0,0-.68-1.94A2.5,2.5,0,0,0,82.91,41a2.72,2.72,0,0,0-2,.78,3.31,3.31,0,0,0-.76,2.36V51H76.85V33.2h3.27v6.49A4.24,4.24,0,0,1,83.9,37.92Z" transform="translate(-57.79 -32.85)"/><path d="M101.11,38.27h3.27V51h-3.27v-1.5A5,5,0,0,1,97,51.3a5.76,5.76,0,0,1-4.35-1.94,7.15,7.15,0,0,1,0-9.51A5.75,5.75,0,0,1,97,37.92a5,5,0,0,1,4.13,1.85Zm-6,8.91a3.38,3.38,0,0,0,2.51,1,3.41,3.41,0,0,0,2.52-1,3.8,3.8,0,0,0,0-5.14,3.42,3.42,0,0,0-2.52-1,3.38,3.38,0,0,0-2.51,1,3.83,3.83,0,0,0,0,5.14Z" transform="translate(-57.79 -32.85)"/><path d="M114.6,41.41h-2.86v5.28a1.24,1.24,0,0,0,.32,1,1.52,1.52,0,0,0,1,.34,13.88,13.88,0,0,0,1.57,0v3q-3.37.38-4.75-.64c-.93-.67-1.39-1.88-1.39-3.62V41.41h-2.2V38.27h2.2V35.71l3.28-1v3.55h2.86Z" transform="translate(-57.79 -32.85)"/><path d="M129,33.2v3.35h-4.79V51h-3.5V36.55h-4.77V33.2Z" transform="translate(-57.79 -32.85)"/><path d="M144.87,48.63a9.21,9.21,0,0,1-15.74-6.56,9.22,9.22,0,1,1,15.74,6.56Zm-10.62-2.39a5.73,5.73,0,0,0,9.81-4.17,5.66,5.66,0,0,0-1.65-4.18,5.87,5.87,0,0,0-8.16,0,6.11,6.11,0,0,0,0,8.35Z" transform="translate(-57.79 -32.85)"/><path d="M83.41,64.78a3.76,3.76,0,0,1-1.48-.29,3.69,3.69,0,0,1-1.17-.8A3.33,3.33,0,0,1,80,62.5a3.95,3.95,0,0,1,0-2.92,3.42,3.42,0,0,1,.78-1.19,3.53,3.53,0,0,1,1.17-.8,3.59,3.59,0,0,1,1.48-.29,3.64,3.64,0,0,1,1.47.29,3.68,3.68,0,0,1,1.18.8,3.54,3.54,0,0,1,.77,1.19,3.82,3.82,0,0,1,0,2.92,3.44,3.44,0,0,1-.77,1.19,3.67,3.67,0,0,1-2.65,1.09Zm0-1.08a2.82,2.82,0,0,0,1-.19,2.5,2.5,0,0,0,.81-.54,2.61,2.61,0,0,0,.55-.84,3.07,3.07,0,0,0,0-2.18,2.61,2.61,0,0,0-.55-.84,2.5,2.5,0,0,0-.81-.54,2.62,2.62,0,0,0-1-.19,2.54,2.54,0,0,0-1,.19A2.39,2.39,0,0,0,81.05,60a3.07,3.07,0,0,0,0,2.18,2.39,2.39,0,0,0,1.36,1.38A2.74,2.74,0,0,0,83.41,63.7Z" transform="translate(-57.79 -32.85)"/><path d="M90.41,57.46h1.34l3.19,5.19H95l-.06-1.38V57.46h1.12v7.16H94.88l-3.34-5.45h-.06l.06,1.38v4.07H90.41Z" transform="translate(-57.79 -32.85)"/><path d="M99.7,57.46h1.13v6.08h3.06v1.08H99.7Z" transform="translate(-57.79 -32.85)"/><path d="M107.05,57.46h1.13v7.16h-1.13Z" transform="translate(-57.79 -32.85)"/><path d="M111.82,57.46h1.35l3.18,5.19h.06l-.06-1.38V57.46h1.12v7.16h-1.18L113,59.17h-.06l.06,1.38v4.07h-1.13Z" transform="translate(-57.79 -32.85)"/><path d="M122.24,58.54v2h2.91v1.06h-2.91v2h3.23v1.08h-4.36V57.46h4.36v1.08Z" transform="translate(-57.79 -32.85)"/>
+        </svg>
+    </div>
+    <div class="modal none-select" id="authentication">
+        <nav class="nav">
+            <a class="nav__item active" data-id="auth">Авторизация</a>
+            <a class="nav__item" data-id="register">Регистрация</a>
+        </nav>
+
+        <div class="modal-body">
+            <form id="auth-form">
+                <div class="o">
+                    <label for="username">Имя</label>
+                    <input type="text" class="input" id="username" required>
+                </div>
+                <div class="o">
+                    <label for="password">
+                        <span>Пароль</span>
+                        <a class="gray">Забыли имя или пароль?</a>
+                    </label>
+                    <input type="password" class="input" id="password" required>
+                </div>
+                <div class="o">
+                    <button class="btn success" id="auth-btn">Войти</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            
+            <button class="btn vkbtn">Войти с помощью <img src="../img/vk.svg"></button>
+        </div>
+    </div>
+
+    <div class="modal none-select" id="register">
+        <nav class="nav">
+            <a class="nav__item" data-id="auth">Авторизация</a>
+            <a class="nav__item active" data-id="register">Регистрация</a>
+        </nav>
+        <div class="modal-body">
+            <form id="reg-form">
+                <div class="o" id="wrong-00-1">
+                    <label for="reg_username">Имя</label>
+                    <input type="text" autocomplete="off" class="input" id="reg_username" required>
+                    <span class="wrong-msg" id="wrong1"></span>
+                </div>
+                <div class="o">
+                    <label for="reg_password">Пароль</label>
+                    <input type="password" class="input" id="reg_password" required>
+                </div>
+                <div class="o">
+                    <label for="reg_password2">Подтвердите пароль</label>
+                    <input type="password" class="input" id="reg_password2" required>
+                    <span class="wrong-msg" id="wrong2"></span>
+                </div>
+                <div class="o">
+                    <div class="g-recaptcha" id="reg-captcha" style="width:100%;" data-theme="light" data-sitekey="6LdVPE4UAAAAAPF4DTqRE7skwlMc8cOW9lpIqlHN"></div>
+                </div>
+                <div class="o" style="margin-top: 0;">
+                    <button class="btn success" disabled="disabled" id="reg-btn">
+                        <span>Регистрация</span>
+                    </button>
+                </div>
+                <input type="hidden" value="" id="ref" name="ref">
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="f9">
+                Уже зарегистированы?
+                <button class="small">Войти</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal none-select" id="forget-password">
+        <div class="title warning">
+            <div class="bleft"></div>
+            <span>Восстановление пароля</span>
+        </div>
+        <div class="modal-body">
+            <form id="forget-form">
+                <div class="o" id="wrong-00-2">
+                    <label for="restore_email" style="height: 40px;">
+                        Введите ваш действительный email, чтобы получить ссылку для сброса пароля
+                    </label>
+                    <input type="email" class="input" id="restore_email" required>
+                    <span class="wrong-msg" id="wrong3"></span>
+                </div>
+                <div class="o">
+                    <div class="g-recaptcha" style="width:100%;" id="forget-captcha" data-theme="light" data-sitekey="6LdVPE4UAAAAAPF4DTqRE7skwlMc8cOW9lpIqlHN"></div>
+                </div>
+            </form>
+            <div class="o">
+                <div style="width: 100%;">
+                    <button style="width: calc(50% - 5px);display: inline-block;">Отмена</button>
+
+                    <button class="cancel" disabled="disabled" style="width: calc(50% - 5px);display: inline-block;margin-left: 5px;">
+                        <span>Восстановить</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="f9">
+                Есть вопросы?
+                <a href="https://vk.com/chatto_ru" target="_blank">Информация</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <div class="by">© OOO "ChatTO" 2022. Все права защищены.</div>
+            <div class="d-flex">
+                <div class="item">Правила игры</div>
+                <div class="item">О чате</div>
+            </div>
+        </div>
+        <a href="https://vk.com/chatto_ru" target="_blank" class="vk-link">Наша группа вк <img src="../img/vk.svg"></a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/auth/auth.js?<%= + new Date(); %>"></script>
+    </div>
+</body>
+
+</html>

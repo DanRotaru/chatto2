@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatTO</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navbar__item">
+                <button class="navbar__btn btn-premium">
+                    <img src="https://tankionline.com/play/static/images/lobby/iconButtonPremium.d5d43f68.svg" alt="img">
+                </button>
+                <div class="user-details">
+                    <img class="user-details__img" src="https://tankionline.com/play/static/images/large/31.53e7465d.webp" alt="img">
+                    <div class="user-details__name">
+                        <div>Легенда 1 | DanRotaru</div>
+                        <progress value="25" id="rank-width" min="0" max="100"></progress>
+                        <div>1 000 / 2000</div>
+                    </div>
+                </div>
+                <button onclick="menu()" class="navbar__btn bl-1" tooltip="Меню" flow="right">
+                    <img style="height: 60px;" src="img/menu2.svg" alt="img">
+                </button>
+                <button class="navbar__btn" tooltip="Магазин" flow="right">
+                    <img style="height: 35px;" src="img/shop.svg" alt="img">
+                </button>
+            </div>
+            <div class="navbar__item">
+                <img style="height: 35px;" src="img/logo-t.svg" alt="img">
+            </div>
+            <div class="navbar__item">
+                <div class="item-number">
+                    <div class="item-number__num">
+                        <div class="num">
+                            <img src="img/coin.svg" alt="coin">
+                            <div>97</div>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#FC0" fill-rule="evenodd" clip-rule="evenodd" d="M6 0h4v6h6v4H0V6h6V0zm4 10v6H6v-2l4-4z" />
+                        </svg>
+                    </div>
+                    <div class="item-number__num">
+                        <div class="num">
+                            <img src="img/kry.svg" alt="coin">
+                            <div>39 988</div>
+                        </div>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#00D4FF" fill-rule="evenodd" clip-rule="evenodd" d="M6 0h4v6h6v4H0V6h6V0zm4 10v6H6v-2l4-4z" />
+                        </svg>
+                    </div>
+                </div>
+                <button class="navbar__btn bl-1" tooltip="Задания" flow="down">
+                    <img style="height: 35px;" src="img/quests.svg" alt="img">
+                </button>
+                <button class="navbar__btn" tooltip="Лотерея" flow="down">
+                    <img src="img/lottery.svg" alt="img">
+                </button>
+                <button class="navbar__btn" tooltip="Настройки" flow="down">
+                    <img src="img/settings.svg" alt="img">
+                </button>
+                <button class="navbar__btn" tooltip="Полноэкранный режим" flow="down">
+                    <div class="letter">F11</div>
+                    <img src="img/fullscreen.svg" alt="img">
+                </button>
+                <!-- <button class="navbar__btn" tooltip="Помощь" flow="down">
+                    <img src="data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M10,19H13V22H10V19M12,2C17.35,2.22 19.68,7.62 16.5,11.67C15.67,12.67 14.33,13.33 13.67,14.17C13,15 13,16 13,17H10C10,15.33 10,13.92 10.67,12.92C11.33,11.92 12.67,11.33 13.5,10.67C15.92,8.43 15.32,5.26 12,5A3,3 0 0,0 9,8H6A6,6 0 0,1 12,2Z'%3E%3C/path%3E%3C/svg%3E"/>
+                </button> -->
+                <button class="navbar__btn br-0" tooltip="Выход" flow="down">
+                    <img src="img/iconLogout.svg" alt="img">
+                </button>
+            </div>
+        </div>
+        <nav class="nav" id="menu">
+            <a class="nav__item active">Правила</a>
+            <a class="nav__item">Рейтинги</a>
+            <a class="nav__item">Обновления</a>
+            <a class="nav__item">Онлайн</a>
+            <a class="nav__item">Администрация</a>
+            <a class="nav__item">Подарочные карты</a>
+            <a class="nav__item">Помощь</a>
+            <a href="https://vk.com/chatto_ru" target="_blank" class="nav__item">Наша группа вк</a>
+        </nav>
+    </header>
+
+    <aside class="chat">
+        <nav class="chat-nav">
+            <select name="select" id="select">
+                <option value="1" selected>Чат</option>
+                <option value="2">Новости</option>
+            </select>
+            <svg viewBox="0 0 24 24" style="height: 20px;margin-right: 2px;opacity:.8">
+                <path fill="#fff" d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z"></path>
+            </svg>
+        </nav>
+        <div id="chat_messages"></div>
+        <div class="chat-footer">
+            <input class="chat-footer__input" id="text" type="text" placeholder="Написать в чате" autocomplete="off"/>
+            <button id="chat-send" title="Отправить">
+                <svg viewBox="0 0 24 24">
+                    <path d="M0 0l23.997 12L0 24l4.422-12.046L0 0z" fill="#fff"/>
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <main>
+        <div class="garage">
+            <div class="garage-top">
+                <div class="garage__viewer"><div class="garage__title">Ваш танк</div>
+                    <div id="viewer"></div>
+                </div>
+                <div class="garage__information">
+                    <div class="garage__title">Информация</div>
+                </div>
+            </div>
+            
+            <div class="garage__items">
+                <div class="garage__items-item">
+                    <div class="top">
+                        <div class="name">Огнемёт</div>
+                        <div class="modification">M3</div>
+                    </div>
+                    <img src="https://s.eu.tankionline.com/0/114/134/163/27571212744112/image.webp" alt="img">
+                </div>
+                <div class="garage__items-item">
+                    <div class="top">
+                        <div class="name">Огнемёт</div>
+                        <div class="modification">M3</div>
+                    </div>
+                    <img src="https://s.eu.tankionline.com/0/114/134/163/27571212744112/image.webp" alt="img">
+                </div>
+                <div class="garage__items-item">
+                    <div class="top">
+                        <div class="name">Огнемёт</div>
+                        <div class="modification">M3</div>
+                    </div>
+                    <img src="https://s.eu.tankionline.com/0/114/134/163/27571212744112/image.webp" alt="img">
+                </div>
+                <div class="garage__items-item">
+                    <div class="top">
+                        <div class="name">Огнемёт</div>
+                        <div class="modification">M3</div>
+                    </div>
+                    <img src="https://s.eu.tankionline.com/0/114/134/163/27571212744112/image.webp" alt="img">
+                </div>
+                <div class="garage__items-item">
+                    <div class="top">
+                        <div class="name">Огнемёт</div>
+                        <div class="modification">M3</div>
+                    </div>
+                    <img src="https://s.eu.tankionline.com/0/114/134/163/27571212744112/image.webp" alt="img">
+                </div>
+                <div class="garage__items-item">
+                    <div class="top">
+                        <div class="name">Огнемёт</div>
+                        <div class="modification">M3</div>
+                    </div>
+                    <img src="https://s.eu.tankionline.com/0/114/134/163/27571212744112/image.webp" alt="img">
+                </div>
+                <div class="garage__items-item">
+                    <div class="top">
+                        <div class="name">Огнемёт</div>
+                        <div class="modification">M3</div>
+                    </div>
+                    <img src="https://s.eu.tankionline.com/0/114/134/163/27571212744112/image.webp" alt="img">
+                </div>
+                <div class="garage__items-item">
+                    <div class="top">
+                        <div class="name">Огнемёт</div>
+                        <div class="modification">M3</div>
+                    </div>
+                    <img src="https://s.eu.tankionline.com/0/114/134/163/27571212744112/image.webp" alt="img">
+                </div>
+            </div>
+
+            <nav class="nav garage__nav" id="menu">
+                <a class="nav__item active">Пушки</a>
+                <a class="nav__item">Корпуса</a>
+                <a class="nav__item">Краски</a>
+                <a class="nav__item">Припасы</a>
+                <a class="nav__item">Контейнеры</a>
+                <a class="nav__item">Особое</a>
+                <a class="nav__item">Подарки</a>
+            </nav>
+        </div>
+    </main>
+
+    <div class="modal-overlay"></div>
+    <div class="modal">
+        <div class="modal__title">Сбой</div>
+        <div class="modal__message">NotFoundError: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.</div>
+        <div class="modal__close"></div>
+    </div>
+
+    <script src="js/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

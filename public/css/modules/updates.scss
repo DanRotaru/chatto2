@@ -1,0 +1,24 @@
+.update {
+    padding: 20px;
+    background: rgb(255 255 255 / 10%);
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__text {
+        font-size: 14px;
+
+        li {
+            list-style-type: decimal;
+            -webkit-margin-before: 0.5em;
+        }
+    }
+    &__date {
+        text-align: right;
+        font-size: 14px;
+    }
+}

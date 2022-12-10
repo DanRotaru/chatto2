@@ -1,0 +1,155 @@
+<div class="main-title">Лотерея</div>
+<nav class="nav nav-main" id="loto-nav">
+    <a class="nav__item active" data-id="1">Комната 1</a>
+    <a class="nav__item" data-id="2">Комната 2</a>
+    <a class="nav__item" data-id="3">Комната 3</a>
+</nav>
+
+
+<div id="page-lottery">
+    <div class="lottery">
+        <div class="flex between" style="margin-bottom: 10px;font-size: 14px;">
+            <div>Всего ставок: <span id="lottery_number">0</span></div>
+            <div>Общий фонд: <span id="lottery_totalbank">0</span> <kry></kry>
+            </div>
+        </div>
+        <div class="flex between">
+            <div class="wheel">
+                <div class="window">
+                    <ul class="list">
+                        <li class="green">
+                            <span data-id="green">0 <kry></kry></span>
+                            <div>Зелёный</div>
+                        </li>
+                        <li class="red">
+                            <span data-id="red">0 <kry></kry></span>
+                            <div>Красный</div>
+                        </li>
+                        <li class="blue">
+                            <span data-id="blue">0 <kry></kry></span>
+                            <div>Синий</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timer hidden">20</div>
+            <div class="insert">
+                <div class="insert__wrapper">
+                    <input id="loto-input" type="number" min="0" max="10000" placeholder="Минимальная ставка: 1 000 кристаллов" />
+                    <div class="flex between">
+                        <button class="btn green" onclick="lotteryGo(1)">Зелёный</button>
+                        <button class="btn red" onclick="lotteryGo(2)">Красный</button>
+                        <button class="btn primary" onclick="lotteryGo(3)">Синий</button>
+                    </div>
+                    <div class="text-center">
+                        Текущий банк: <span id="lottery_bank">0</span> <kry></kry>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loto-users">
+            <div class="loto-users-list green">
+                <div class="bank">
+                    <div>0 <kry></kry></div>
+                </div>
+                <div class="loto-users-wrapper sm-scroll">
+                    <table id="lottery-table-green">
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="loto-users-list red">
+                <div class="bank">
+                    <div>0 <kry></kry></div>
+                </div>
+                <div class="loto-users-wrapper sm-scroll">
+                    <table id="lottery-table-red">
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="loto-users-list blue">
+                <div class="bank">
+                    <div>0 <kry></kry></div>
+                </div>
+                <div class="loto-users-wrapper sm-scroll">
+                    <table id="lottery-table-blue">
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%# 
+    <div class="lot" style="
+    position: absolute;
+    left: -2px;
+    top: -20px;
+    background: #2A4252;
+    width: calc(100% + 3px);
+    height: calc(100% + 20px);
+    z-index: 2222;
+    display: flex;
+    justify-content: space-between;
+">
+    <div style="
+    display: flex;
+    padding-left: 30px;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+"><div class="wwheel" style="
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background: #ff0;
+"></div>
+<div style="
+    background: #bfbfbf;
+    width: 300px;
+    height: 150px;
+    margin-top: 30px;
+"></div></div><div class="loto-users" style="
+    width: calc(100% - 0px);
+    padding: 10px;
+">
+            <div class="loto-users-list green">
+                <div class="bank">
+                    <div>1 234 <kry></kry></div>
+                </div>
+                <div class="loto-users-wrapper sm-scroll">
+                    <table id="lottery-table-green">
+                        <tbody>
+            <tr>
+                <td>
+                    <div class="rank r3"></div>
+                    <span onclick="profile('DanRotaru')" class="user">DanRotaru</span>
+                </td>
+                <td>1 234 <kry></kry></td>
+            </tr></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            
+        </div>
+</div>
+    %> 
+</div>
+<script>
+    $("#loto-nav a").click(function(){
+        let id = $(this).attr('data-id');
+        $("#loto-nav a").removeClass("active");
+        $(this).addClass("active");
+        clearInterval(countdown_interval);
+        $(".lottery .timer").addClass("hidden");
+        socket.emit('getLottery', id);
+    });
+</script>
+<!-- <div class="garage-info questions-info">
+    <svg>
+        <use xlink:href="#info-svg"></use>
+    </svg>
+    Здесь вы сможете закупится.
+</div> -->

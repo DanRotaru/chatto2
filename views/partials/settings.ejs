@@ -1,0 +1,156 @@
+<% 
+function option(option, r){
+    let settings = JSON.parse(JSON.stringify(info.settings));
+    if(settings[option]) r = 'checked';
+    else r = '';
+    return r
+}
+%> 
+
+<div class="main-title">Настройки</div>
+<nav class="nav nav-main" id="settings-nav">
+    <a class="nav__item active" data-id="game">Игра</a>
+    <a class="nav__item" data-id="interface">Интерфейс</a>
+    <a class="nav__item" data-id="account">Аккаунт</a>
+    <a class="nav__item" data-id="others">Прочее</a>
+</nav>
+
+<div class="settings-wrapper">
+    <div id="settings-game">
+        <div class="settings-item">
+            <div class="select-item" style="width: 250px;">
+                <div class="select-item__title">Язык</div>
+                <ul>
+                    <li>
+                        <img src="../img/ru.webp">
+                        <span>Русский, RU</span>
+                    </li>
+                    <li>
+                        <img src="../img/en.webp">
+                        <span>English, EN</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="settings-item">
+            <label for="settings_showmenu">
+                Отображать меню при нажатии на ник
+                <div class="description">
+                    При нажатии на ник отобразится меню с нужными действами. Если отключать этот параметр в чате возле ника будет ссылка [PM]
+                </div>
+            </label>
+            <input type="checkbox" <%= option('showmenu') %> id="settings_showmenu" switch>
+            <label class="switch-label" for="settings_showmenu">Toggle</label>
+        </div>
+        <div class="settings-item">
+            <label for="settings_showviewer">
+                Отображать гараж (viewer танка)
+                <div class="description">
+                    Отображение viewer танка, это положительно скажется на скорость работы (для мало-производительных устройтв)
+                </div>
+            </label>
+            <input type="checkbox" <%= option('showviewer') %> id="settings_showviewer" switch>
+            <label class="switch-label" for="settings_showviewer">Toggle</label>
+        </div>
+        <div class="settings-item">
+            <label for="settings_smilesclose">
+                Закрыть окно выбора смайлов
+                <div class="description">
+                    Закрыть окно выбора смайлов после выбора смайла
+                </div>
+            </label>
+            <input type="checkbox" <%= option('smilesclose') %> id="settings_smilesclose" switch>
+            <label class="switch-label" for="settings_smilesclose">Toggle</label>
+        </div>
+        <div class="settings-item">
+            <label for="settings_uppercase">
+                Верхний регистр
+                <div class="description">
+                    Первая буква в предложении всегда будет капсом
+                </div>
+            </label>
+            <input type="checkbox" <%= option('uppercase') %> id="settings_uppercase" switch>
+            <label class="switch-label" for="settings_uppercase">Toggle</label>
+        </div>
+        
+        <div class="settings-item">
+            <label for="settings_ambientSound">
+                Фоновый звук
+                <div class="description">
+                    Если включить этот параметр будет включён фоновый звук игры
+                </div>
+            </label>
+            <input type="checkbox" <%= option('ambientSound') %> id="settings_ambientSound" switch>
+            <label class="switch-label" for="settings_ambientSound">Toggle</label>
+        </div>
+        <!-- <div class="settings-item">
+            <label for="settings_goldsound">
+                Звук сброса золотого ящика
+                <div class="description">
+                    Если включить этот параметр будет звучать сирена при сбросе золотого ящика
+                </div>
+            </label>
+            <input type="checkbox" id="settings_goldSound" switch>
+            <label class="switch-label" for="settings_goldSound">Toggle</label>
+        </div> -->
+        <div class="settings-item">
+            <label for="settings_caseSound">
+                Звук открытие контейнеров
+                <div class="description">
+                    Если включить этот параметр при открытии контейнеров будет звук его открытия
+                </div>
+            </label>
+            <input type="checkbox" <%= option('caseSound') %> id="settings_caseSound" switch>
+            <label class="switch-label" for="settings_caseSound">Toggle</label>
+        </div>
+    
+        <div class="settings-item col">
+            <div>Игнор лист
+                <div class="description">
+                    Тут отображаются все пользователи добавленные в игнор. Их сообщения вам не видны
+                </div>
+
+            </div>
+            <table id="table-1">
+                <tbody>
+                    <tr>
+                        <th>Пользователь</th>
+                        <th>Действие</th>
+                    </tr>
+                    <!-- <tr>
+                        <td>1.1</td>
+                        <td>Пользователю запрещается использовать флуд, флейм, сообщений а так же их дублирования.</td>
+                    </tr> -->
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="settings-interface" class="hidden">
+        <div class="settings-item">
+            <div>
+                Тема оформления
+                <div class="description">
+                    Вы можете поменять тему оформления чата на любую другую из текущего списка
+                </div>
+            </div>
+            <select id="theme-select">
+                <option value="0">По умолчанию</option>
+                <option value="1">Alpine Green</option>
+                <option value="2">Teal</option>
+                <option value="3">Dark blue</option>
+                <option value="4">Dark</option>
+            </select>
+            
+        </div>
+    </div>
+    <div id="settings-account" class="hidden"></div>
+    <div id="settings-others" class="hidden"></div>
+</div>
+
+<!-- <div class="garage-info questions-info">
+    <svg>
+        <use xlink:href="#info-svg"></use>
+    </svg>
+    Здесь вы сможете закупится.
+</div> -->

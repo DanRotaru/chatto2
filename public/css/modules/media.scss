@@ -1,0 +1,14 @@
+@media (max-width: 700px) {
+    aside.chat{
+        width: 100%;
+    }
+    main{
+        display: none;
+    }
+}
+
+@media (max-width: 420px){
+    .header .navbar .btn-premium{
+        display: none !important;
+    }
+}

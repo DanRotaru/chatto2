@@ -1,0 +1,185 @@
+#clans-page{
+    padding: 10px 5px 0 0;
+    height: calc(100% - 250px);
+    overflow: auto;
+    margin-right: 5px
+}
+
+.clans-top{
+    position: relative;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: flex;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    border-radius: 7px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 139px;
+
+    .clan{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.29);
+        border-radius: 5px;
+        padding: 5px 0 0 0;
+        cursor: pointer;
+        width: 120px;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        div{
+            font-size: 11px;
+        }
+
+        img{
+            object-fit: cover;
+            border-radius: 3px;
+            margin-top: 5px;
+            height: 90px;
+            max-width: 120px;
+            flex-shrink: 0;
+            width: 100%;
+        }
+    }
+}
+.clans-top-title{
+    font-size: 12px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+#clans-page #table-1 tr{
+    text-align: center;
+}
+#clans, #oneclan{
+    height: 100%;
+}
+#oneclan{
+    
+    .clan-info{
+        padding: 10px;
+        background: rgb(255 255 255 / 10%);
+        border-radius: 5px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        overflow: hidden;
+
+        .flex.between{
+            align-items: center;
+        }
+        .clan-flex{
+            display: flex;
+            gap: 10px;
+        }
+
+        .clan-logo{
+            border-radius: 5px;object-fit: cover;
+            height: 90px;
+            max-width: 150px;
+            flex-shrink: 0;
+            width: 100%;
+            box-shadow: 0px 2px 4px 1px rgb(0 0 0 / 16%);
+        }
+        .clan-title{
+            font-size: 20px;
+        }
+        .clan-by{
+            margin: 5px 0 0 0;
+            white-space: nowrap;
+        }
+        .btn{
+            width: 100%;
+            margin-top: 8px;
+        }
+        // https://tankionline.com/play/static/images/png/Background.803d9f1c.webp
+        
+
+        &-div{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            background: rgb(255 255 255 / 10%);
+            border-radius: 5px;
+            padding: 8px;
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+
+            &:first-child{
+                width: 150px;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            div{
+                font-size: 12px;
+                opacity: .8;
+            }
+            .btn{
+                margin-top: 5px;
+            }
+            svg{
+                height: 28px;
+
+                &.my{
+                    height: 20px;
+                }
+            }
+            span{
+                font-size: 15px;
+                &.clan-messages{
+                    color: gold;
+                    text-shadow: 0 0 10px #ffd700;
+                }
+                &.clan-kry{
+                    color: #00D4FF;
+                    text-shadow: 0 0 10px #00d4ff;
+                }
+                &.clan-bans{
+                    color: #00ffaa;
+                    text-shadow: 0 0 10px #00ffaa;
+                }
+            }
+        }
+
+        .description{
+            background: rgb(255 255 255 / 10%);
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 12px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            word-wrap: break-word;
+            border-radius: 5px;
+            white-space: break-spaces;
+            max-height: 130px;
+            overflow: auto;
+        }
+        .clan-users{
+            overflow: auto;
+            max-height: calc(100% - 230px);
+
+            thead{
+                top: 0;
+            }
+        }
+    }
+}
+.input{
+    margin-top: 5px;
+    padding: 10px;
+    background: rgb(255 255 255 / 10%);
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    font: 14px "Rubik", sans-serif;
+    outline: none;
+}

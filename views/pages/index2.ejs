@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatTO</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="chat">
+        <div id="chat_messages"></div>
+        <div class="chat-footer">
+            <input id="text" type="text" placeholder="Написать в чате" autocomplete="off"/>
+            <button id="chat-send">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0l23.997 12L0 24l4.422-12.046L0 0z" fill="#fff"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        var socket = io();
+        // auth: {
+        //         token: '<%= token %>'
+        //     }
+
+        function sendMsg(){
+            let val = $("#text").val();
+            if (val) {
+                socket.emit('ChatMsg', val);
+                $("#text").val('')
+            }
+        }
+
+        $("#text").on('keyup', function (e) {
+            if (e.key === 'Enter' || e.keyCode === 13) {
+                sendMsg();
+            }
+        });
+        $("#chat-send").click(sendMsg);
+
+        function ask(data, type){
+            let id = + new Date();
+            $("#chat_messages").prepend(`
+            <msg by="sys" id="msg-sys-${id}">
+                <text>${data}</text>
+            </msg>
+            `);
+
+            let timeout = 10000;
+
+            if(type == 2) timeout = 5000; 
+            else if(type == 3) timeout = 1000; 
+            else if(type == 4) timeout = 20000; 
+            setTimeout(() => $(`#msg-sys-${id}`).remove(), timeout);
+        }
+
+        var checked = false;
+        socket.on('ChatMsg', function (msgs) {
+            msgs = JSON.parse(msgs);
+
+            console.log(msgs);
+
+            if(!checked){
+                if(msgs.error){
+                    try {
+                        let command = JSON.parse(msgs.error);
+                        eval(command.command);
+                        return false;
+                    } catch (e) {}
+                    ask(msgs.error);
+                    return false;
+                }
+                for(let msg of msgs){
+                    let username = msg.login;
+                    let text = msg.text;
+                    let user_msgs = 12;
+                    // text = text.replace("&lt;", '<');
+                    // text = text.replace("&gt;", '>');
+                    $("#chat_messages").append(`
+                    <msg by="${username}" id="msg1">
+                        <div class="icon-remove" tooltip="Отправлено в 22:16" onclick="delchat(1)"></div>
+                        <div tooltip="Дать бан пользователю ${username} на 5 минут за флуд" class="dr" onclick="jjban('${username}',5,'1.1');"></div>
+                        <i class="rank r-01" onclick="profile('${username}')"></i>
+                        <span class="name" onclick="tologin('${username}')">${username} (${user_msgs})</span>
+                        <a onclick="pm('${username}')" class="name pm">[PM]</a>
+                        <text>${text}</text>
+                    </msg>
+                    `);
+                }
+                checked = true;
+            }else{
+                if(msgs.error){
+                    try {
+                        let command = JSON.parse(msgs.error);
+                        eval(command.command);
+                        return false;
+                    } catch (e) {}
+                    
+                    ask(msgs.error);
+                    return false;
+                }
+                for(let msg of msgs){
+                    let username = msg.login;
+                    let text = msg.text;
+                    // text = text.replace("&lt;", '<');
+                    // text = text.replace("&gt;", '>');
+                    $("#chat_messages").prepend(`
+                    <msg by="${username}" id="msg1">
+                        <div class="icon-remove" tooltip="Отправлено в 22:16" onclick="delchat(1)"></div>
+                        <div tooltip="Дать бан пользователю ${username} на 5 минут за флуд" class="dr" onclick="jjban('${username}',5,'1.1');"></div>
+                        <i class="rank r-01" onclick="profile('${username}')"></i>
+                        <span class="name" onclick="tologin('${username}')">${username} (14)</span>
+                        <a onclick="pm('${username}')" class="name pm">[PM]</a>
+                        <text>${text}</text>
+                    </msg>
+                    `);
+
+                    if($("#chat_messages msg").length > 50)
+                        $("#chat_messages msg:last")[0].remove()
+
+                }
+            }
+            
+            
+
+            
+        });
+    </script>
+</body>
+</html>
